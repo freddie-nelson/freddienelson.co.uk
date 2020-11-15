@@ -21,12 +21,12 @@ export default defineComponent({
 
 // fluid font change
 html {
-  font-size: 12.5px;
+  font-size: 13px;
 }
 
 @media screen and (min-width: 320px) {
   html {
-    font-size: calc(12.5px + 3.5 * ((100vw - 320px) / 680));
+    font-size: calc(13px + 3 * ((100vw - 320px) / 680));
   }
 }
 
@@ -52,7 +52,7 @@ html {
   --page-title: 900 max(4.2vw, 2.8rem) "Lato", "Arial", sans-serif;
   --heading: 700 3.375rem "Lato", "Arial", sans-serif;
   --heading-bolder: 900 3.375rem "Lato", "Arial", sans-serif;
-  --para: 300 max(1.3vw, 1rem)/1.55 "Merriweather", serif;
+  --para: 300 max(1.3vw, 1.2rem)/1.55 "Merriweather", serif;
   --para-small: 300 0.875rem/1.55 "Merriweather", serif;
 
   // spacing
@@ -62,7 +62,7 @@ html {
   @media screen and (max-width: 700px) {
     --side-padding: 4.5vw;
     --page-title: 900 max(4.2vw, 2.8rem)/.95 "Lato", "Arial", sans-serif;
-    --para: 300 max(1.3vw, 1rem)/1.45 "Merriweather", serif;
+    --para: 300 max(1.3vw, 1.02rem)/1.45 "Merriweather", serif;
   }
 }
 
