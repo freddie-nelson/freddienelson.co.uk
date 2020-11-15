@@ -42,14 +42,6 @@ export default defineComponent({
     const delay = 1600;
     const pause = 300;
 
-    window.addEventListener("resize", () => {
-      if (window.innerWidth <= 700) {
-        setupTypewriterMobile(tw, delay, pause);
-      } else {
-        setupTypewriterDesktop(tw, delay, pause);
-      }
-    })
-
     if (window.innerWidth <= 700) {
       setupTypewriterMobile(tw, delay, pause);
     } else {
@@ -90,10 +82,14 @@ export default defineComponent({
       font: var(--para);
       color: var(--para-dark);
       opacity: .75;
-      width: 80%;
+      width: 70%;
       min-width: 350px;
       max-width: 750px;
       margin-bottom: 1.2vh;
+
+      @media screen and (max-width: 450px) {
+        width: 100%;
+      }
     }
 
     a {
@@ -106,7 +102,7 @@ export default defineComponent({
       // }
 
       svg {
-        margin-bottom: -.3%;
+        margin-bottom: -.1%;
         animation: anim 3s infinite ease;
         display: inline;
 
