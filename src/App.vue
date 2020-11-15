@@ -19,6 +19,23 @@ export default defineComponent({
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather:wght@300&display=swap');
 
+// fluid font change
+html {
+  font-size: 12.5px;
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(12.5px + 3.5 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 :root {
   // colors
   --bg-dark: #0B0808;
@@ -32,15 +49,30 @@ export default defineComponent({
   --placeholder: #C4C4C4;
 
   // fonts
-  --page-title: 900 4.5rem "Lato", "Arial", sans-serif;
-  --title: 700 3.375rem "Lato", "Arial", sans-serif;
-  --title-bolder: 900 3.375rem "Lato", "Arial", sans-serif;
-  --para: 300 1.25rem/1.55 "Merriweather", serif;
+  --page-title: 900 max(4.2vw, 2.8rem) "Lato", "Arial", sans-serif;
+  --heading: 700 3.375rem "Lato", "Arial", sans-serif;
+  --heading-bolder: 900 3.375rem "Lato", "Arial", sans-serif;
+  --para: 300 max(1.3vw, 1rem)/1.55 "Merriweather", serif;
   --para-small: 300 0.875rem/1.55 "Merriweather", serif;
+
+  // spacing
+  --side-padding: min(11vw, 250px);
+
+  // responsive variables
+  @media screen and (max-width: 700px) {
+    --side-padding: 4.5vw;
+    --page-title: 900 max(4.2vw, 2.8rem)/.95 "Lato", "Arial", sans-serif;
+    --para: 300 max(1.3vw, 1rem)/1.45 "Merriweather", serif;
+  }
 }
 
 #app {
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
+  
+  section {
+    padding: 0 var(--side-padding);
+  }
 }
 </style>

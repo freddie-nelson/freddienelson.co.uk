@@ -12,6 +12,8 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
+    "@iconify-icons/line-md": "^1.0.5",
+    "@iconify/vue": "^2.0.0-rc.2",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -25,7 +27,8 @@
     "eslint-plugin-vue": "^7.0.0-0",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.0",
-    "typescript": "~3.9.3"
+    "typescript": "~3.9.3",
+    "typewriter-effect": "^2.13.1"
   },
   "eslintConfig": {
     "root": true,
