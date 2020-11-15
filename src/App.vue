@@ -1,9 +1,13 @@
 <template>
+  <mobile-menu :showMenu="showMenu" @close-menu="showMenu = false" />
+  <navbar @show-menu="showMenu = true" />
   <hero />
 </template>
 
 <script lang="ts">
 // import sections
+import MobileMenu from "./components/MobileMenu.vue";
+import Navbar from "./sections/nav/Nav.vue";
 import Hero from "./sections/hero/Hero.vue";
 
 import { defineComponent } from 'vue';
@@ -11,7 +15,23 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'App',
   components: {
+    MobileMenu,
+    Navbar,
     Hero
+  },
+  data() {
+    return {
+      showMenu: false
+    }
+  },
+  watch: {
+    showMenu(val) {
+      if (val) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
+    }
   }
 });
 </script>
@@ -71,7 +91,7 @@ html {
   height: 100%;
   overflow-x: hidden;
   
-  section {
+  section, nav {
     padding: 0 var(--side-padding);
   }
 }
