@@ -1,5 +1,7 @@
 <template>
-  
+  <section id="hero">
+    
+  </section>
 </template>
 
 <script lang="ts">
