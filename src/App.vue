@@ -60,7 +60,7 @@ html {
 
   // responsive variables
   @media screen and (max-width: 700px) {
-    --side-padding: 3.8vw;
+    --side-padding: 3vw;
     --page-title: 900 max(4.2vw, 2.8rem)/.95 "Lato", "Arial", sans-serif;
     --para: 300 max(1.3vw, 1.02rem)/1.45 "Merriweather", serif;
   }
