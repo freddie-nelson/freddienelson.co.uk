@@ -894,6 +894,11 @@
   resolved "https://registry.yarnpkg.com/@iconify-icons/line-md/-/line-md-1.0.5.tgz#5f3157077e5116282eb99e29a1bb58f5007bbbb0"
   integrity sha512-Kox0M4+IAk7JtWEVrMHpCWyLDhqo2UhdMov/V0XshQadEcfSL9SSlopt5uslTdD6oktAceyPLwSm606+HWmwZQ==
 
+"@iconify-icons/uil@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@iconify-icons/uil/-/uil-1.0.1.tgz#1cd10816d42bda988d0dd97b8d368e8b84d5fb36"
+  integrity sha512-5mbZzgkSNZhaei34kr3d07kGfblU3DJ6it2n2sOtfYkpItZJDISgZm6iGPHX9h0NxFjCga8iK7Qv5TZ+y2pURw==
+
 "@iconify/vue@^2.0.0-rc.2":
   version "2.0.0-rc.2"
   resolved "https://registry.yarnpkg.com/@iconify/vue/-/vue-2.0.0-rc.2.tgz#34cf647e5c5eaf58e55cc693a5f0508d304c9208"

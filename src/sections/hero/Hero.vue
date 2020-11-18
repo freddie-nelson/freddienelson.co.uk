@@ -79,7 +79,7 @@ export default defineComponent({
     }
 
     p {
-      font: var(--para);
+      font: var(--page-subtitle);
       color: var(--para-dark);
       opacity: .75;
       width: 70%;

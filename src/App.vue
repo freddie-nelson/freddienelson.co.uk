@@ -2,6 +2,8 @@
   <mobile-menu :showMenu="showMenu" @close-menu="showMenu = false" />
   <navbar @show-menu="showMenu = true" />
   <hero />
+  <skills />
+  <about />
 </template>
 
 <script lang="ts">
@@ -9,6 +11,8 @@
 import MobileMenu from "./components/MobileMenu.vue";
 import Navbar from "./sections/nav/Nav.vue";
 import Hero from "./sections/hero/Hero.vue";
+import Skills from "./sections/skills/Skills.vue";
+import About from "./sections/about/About.vue";
 
 import { defineComponent } from 'vue';
 
@@ -17,7 +21,9 @@ export default defineComponent({
   components: {
     MobileMenu,
     Navbar,
-    Hero
+    Hero,
+    Skills,
+    About
   },
   data() {
     return {
@@ -70,19 +76,26 @@ html {
 
   // fonts
   --page-title: 900 max(4.2vw, 2.8rem) "Lato", "Arial", sans-serif;
+  --page-subtitle: 300 max(1.3vw, 1.2rem)/1.55 "Merriweather", serif;
   --heading: 700 3.375rem "Lato", "Arial", sans-serif;
   --heading-bolder: 900 3.375rem "Lato", "Arial", sans-serif;
-  --para: 300 max(1.3vw, 1.2rem)/1.55 "Merriweather", serif;
+  --para: 300 1rem/1.55 "Merriweather", serif;
   --para-small: 300 0.875rem/1.55 "Merriweather", serif;
 
   // spacing
   --side-padding: min(11vw, 250px);
 
+  // skills section
+  --skills-btn-bg: #eeeeee;
+  --skills-btn-text: #4d4d4d;
+  --skills-btn-selected-bg: #FFECF1;
+  --skills-btn-selected-text: #FF1F5A;
+
   // responsive variables
   @media screen and (max-width: 700px) {
     --side-padding: 3vw;
     --page-title: 900 max(4.2vw, 2.8rem)/.95 "Lato", "Arial", sans-serif;
-    --para: 300 max(1.3vw, 1.02rem)/1.45 "Merriweather", serif;
+    --page-subtitle: 300 max(1.3vw, 1.02rem)/1.45 "Merriweather", serif;
   }
 }
 

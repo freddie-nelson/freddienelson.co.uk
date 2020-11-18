@@ -57,6 +57,26 @@ export default defineComponent({
 
   .link {
     font-size: 1.3rem;
+    position: relative;
+    mix-blend-mode: difference;
+
+    &:hover {
+      &::before {
+        width: calc(100% + 20px);
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: var(--accent-dark);
+      top: calc(49%);
+      left: -10px;
+      border-radius: 2px;
+      transition: width .2s ease;
+      height: 4px;
+      width: 0px;
+    }
   }
 
   .menu-btn {

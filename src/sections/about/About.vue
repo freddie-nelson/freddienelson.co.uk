@@ -1,5 +1,7 @@
 <template>
-  
+  <section id="about">
+
+  </section>
 </template>
 
 <script lang="ts">
@@ -11,5 +13,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-
+#about {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--bg-light);
+}
 </style>
