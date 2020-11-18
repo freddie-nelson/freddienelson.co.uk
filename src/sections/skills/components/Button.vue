@@ -24,14 +24,18 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .btn {
-  width: 31%;
-  height: 50px;
+  min-width: 150px;
+  height: 10vw;
+  min-height: 36px;
+  max-height: 50px;
   border-radius: 6px;
   background-color: var(--skills-btn-bg);
   color: var(--skills-btn-text);
   font: var(--heading);
   font-size: 1.4rem;
   outline: none;
+  flex-grow: 1;
+  margin: 6px 0;
 
   &.selected {
     background-color: var(--skills-btn-selected-bg);

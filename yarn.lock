@@ -894,6 +894,11 @@
   resolved "https://registry.yarnpkg.com/@iconify-icons/line-md/-/line-md-1.0.5.tgz#5f3157077e5116282eb99e29a1bb58f5007bbbb0"
   integrity sha512-Kox0M4+IAk7JtWEVrMHpCWyLDhqo2UhdMov/V0XshQadEcfSL9SSlopt5uslTdD6oktAceyPLwSm606+HWmwZQ==
 
+"@iconify-icons/tabler@^1.0.13":
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/@iconify-icons/tabler/-/tabler-1.0.13.tgz#bfcdf620c8b22084e00a6c8e5ad4b1de7b9d95d8"
+  integrity sha512-IZHWwApPkSsJHmldXnC7gjcRH1iYXrpeotF9LFvfabZmifKen8pdAkAQvCyK2bUcNjnJ8gUQXDIj3EhAgkb+zg==
+
 "@iconify-icons/uil@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@iconify-icons/uil/-/uil-1.0.1.tgz#1cd10816d42bda988d0dd97b8d368e8b84d5fb36"
