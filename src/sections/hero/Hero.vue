@@ -37,8 +37,6 @@ export default defineComponent({
       loop: true
     });
 
-    console.log(tw);
-
     const delay = 1600;
     const pause = 300;
 

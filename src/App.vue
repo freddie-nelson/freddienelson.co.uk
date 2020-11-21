@@ -48,6 +48,7 @@ export default defineComponent({
 // fluid font change
 html {
   font-size: 13px;
+  scroll-behavior: smooth;
 }
 
 @media screen and (min-width: 320px) {
@@ -98,7 +99,6 @@ html {
     --page-subtitle: 300 max(1.3vw, 1.02rem)/1.45 "Merriweather", serif;
   }
 }
-
 #app {
   width: 100%;
   height: 100%;

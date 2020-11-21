@@ -5,40 +5,62 @@
       <skill-btn text="Backend" :selected="backend" @click="changeSkill" />
       <skill-btn text="UI Design" :selected="ui" @click="changeSkill" />
     </div>
+    <div class="main">
+      <div class="icons">
+        <Icon :icon="icons.tl" />
+        <Icon :icon="icons.tr" />
+        <Icon :icon="icons.bl" />
+        <Icon :icon="icons.br" />
+      </div>
+    </div>
   </section>
 </template>
 
 <script lang="ts">
 import Button from "./components/Button.vue";
 
-import { defineComponent } from "vue";
+import { Icon } from "@iconify/vue";
+import getIcon from "./getIcon";
+
+import { defineComponent, ref, computed } from "vue";
 
 export default defineComponent({
   name: "Skills",
   components: {
-    "skill-btn": Button
+    "skill-btn": Button,
+    Icon
   },
-  data() {
-    return {
-      frontend: true,
-      backend: false,
-      ui: false
-    }
-  },
-  methods: {
-    changeSkill(e: any) {
+  setup() {
+    const frontend = ref(true);
+    const backend = ref(false);
+    const ui = ref(false);
+
+    const changeSkill = (e: any) => {
       const text = e.srcElement.innerText;
 
-      this.frontend = false;
-      this.backend = false;
-      this.ui = false;
+      frontend.value = false;
+      backend.value = false;
+      ui.value = false;
       
       if (text === "Frontend") {
-        this.frontend = true;
+        frontend.value = true;
       } else if (text === "Backend") {
-        this.backend = true;
+        backend.value = true;
       } else {
-        this.ui = true;
+        ui.value = true;
+      }
+    }
+
+    return {
+      frontend,
+      backend,
+      ui,
+      changeSkill,
+      icons: {
+        tl: computed(() => getIcon(frontend.value, backend.value, "tl")),
+        tr: computed(() => getIcon(frontend.value, backend.value, "tr")),
+        bl: computed(() => getIcon(frontend.value, backend.value, "bl")),
+        br: computed(() => getIcon(frontend.value, backend.value, "br"))
       }
     }
   }
@@ -54,7 +76,7 @@ export default defineComponent({
   position: absolute;
   padding: 19px 45px 25px 45px !important;
   margin: 0 var(--side-padding);
-  margin-top: -180px;
+  margin-top: -200px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.04), 0px 25px 50px rgba(0, 0, 0, 0.09);
 
   .buttons {
