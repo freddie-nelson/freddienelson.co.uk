@@ -1,0 +1,11 @@
+{
+    "name": "Freddie Nelson",
+    "short_name": "Freddie Nelson",
+    "icons": [{
+        "src": "favicon.png",
+        "sizes": "512x512"
+    }],
+    "background_color": "#0B0808",
+    "theme_color": "#0B0808",
+    "display": "fullscreen"
+}
