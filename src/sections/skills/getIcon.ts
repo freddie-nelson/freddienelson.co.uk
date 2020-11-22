@@ -3,15 +3,15 @@ import ftr from "@iconify-icons/uil/html3-alt";
 import fbl from "@iconify-icons/uil/html5-alt";
 import fbr from "@iconify-icons/uil/vuejs-alt";
 
-import btl from "@iconify-icons/uil/android-alt";
-import btr from "@iconify-icons/uil/html3-alt";
-import bbl from "@iconify-icons/uil/html5-alt";
-import bbr from "@iconify-icons/uil/vuejs-alt";
+import btl from "@iconify-icons/uil/code";
+import btr from "@iconify-icons/uil/server";
+import bbl from "@iconify-icons/uil/database";
+import bbr from "@iconify-icons/tabler/brand-docker";
 
-import utl from "@iconify-icons/uil/android-alt";
-import utr from "@iconify-icons/uil/html3-alt";
-import ubl from "@iconify-icons/uil/html5-alt";
-import ubr from "@iconify-icons/uil/vuejs-alt";
+import utl from "@iconify-icons/uil/paint-tool";
+import utr from "@iconify-icons/tabler/brand-figma";
+import ubl from "@iconify-icons/uil/desktop";
+import ubr from "@iconify-icons/uil/notes";
 
 export default (f: boolean, b: boolean, pos: string) => {
   if (f) {

@@ -63,6 +63,10 @@ html {
   }
 }
 
+* {
+  font-family: "Lato", "Arial", sans-serif;
+}
+
 :root {
   // colors
   --bg-dark: #0B0808;
@@ -103,9 +107,9 @@ html {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  
-  section, nav {
-    padding: 0 var(--side-padding);
-  }
+}
+
+section, nav {
+  padding: 0 var(--side-padding);
 }
 </style>
