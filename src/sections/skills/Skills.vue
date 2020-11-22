@@ -1,6 +1,6 @@
 <template>
   <section class="skills">
-    
+
     <div class="buttons">
       <skill-btn text="Frontend" :selected="frontend" @click="changeSkill" />
       <skill-btn text="Backend" :selected="backend" @click="changeSkill" />
@@ -113,7 +113,7 @@ export default defineComponent({
   height: 420px;
   background-color: white;
   border-radius: 20px;
-  position: absolute;
+  position: relative;
   padding: 19px 45px 45px 45px;
   margin: 0 var(--side-padding);
   margin-top: -210px;

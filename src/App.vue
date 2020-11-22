@@ -107,6 +107,7 @@ html {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  background-color: var(--bg-light);
 }
 
 section, nav {
