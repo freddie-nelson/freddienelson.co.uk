@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
     <div class="mobile-menu" v-if="showMenu">
-      <button @click="$emit('close-menu')" class="close"><Icon :icon="closeIcon" /></button>
+      <button @click="$emit('close-menu')" name="Close navigation menu" class="close"><Icon :icon="closeIcon" /></button>
       <div class="content">
         <a @click="$emit('close-menu')" href="#about" class="link">About</a>
         <a @click="$emit('close-menu')" href="#projects" class="link">Projects</a>

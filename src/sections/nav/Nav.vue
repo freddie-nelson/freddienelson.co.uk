@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <a href="/" class="logo">Freddie Nelson</a>
-    <button class="menu-btn" @click="$emit('show-menu')"><Icon :icon="menuIcon" /></button>
+    <button class="menu-btn" name="Open navigation menu" @click="$emit('show-menu')"><Icon :icon="menuIcon" /></button>
     <div class="links">
       <a href="#about" class="link">About</a>
       <a href="#projects" class="link">Projects</a>

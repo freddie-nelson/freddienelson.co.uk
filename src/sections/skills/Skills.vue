@@ -45,8 +45,8 @@
         <h2>Get in touch</h2>
         <p>Let’s talk about your ideas and build a solution together.</p>
         <div class="input">
-          <input placeholder="Email..." type="text">
-          <button><Icon :icon="icons.send" /></button>
+          <input placeholder="Email..." label="email" type="text">
+          <button name="Fill contact form"><Icon :icon="icons.send" /></button>
         </div>
       </div>
     </div>
