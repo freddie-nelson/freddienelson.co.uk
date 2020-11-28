@@ -1,3 +1,56 @@
+<script lang="ts">
+import Button from "./components/Button.vue";
+
+import { Icon } from "@iconify/vue";
+import getIcon from "./getIcon";
+import sendIcon from "@iconify-icons/tabler/send";
+
+import { defineComponent, ref, computed } from "vue";
+
+export default defineComponent({
+  name: "Skills",
+  components: {
+    "skill-btn": Button,
+    Icon
+  },
+  setup() {
+    const frontend = ref(true);
+    const backend = ref(false);
+    const ui = ref(false);
+
+    const changeSkill = (e: any) => {
+      const text = e.srcElement.innerText;
+
+      frontend.value = false;
+      backend.value = false;
+      ui.value = false;
+      
+      if (text === "Frontend") {
+        frontend.value = true;
+      } else if (text === "Backend") {
+        backend.value = true;
+      } else {
+        ui.value = true;
+      }
+    }
+
+    return {
+      frontend,
+      backend,
+      ui,
+      changeSkill,
+      icons: {
+        tl: computed(() => getIcon(frontend.value, backend.value, "tl")),
+        tr: computed(() => getIcon(frontend.value, backend.value, "tr")),
+        bl: computed(() => getIcon(frontend.value, backend.value, "bl")),
+        br: computed(() => getIcon(frontend.value, backend.value, "br")),
+        send: sendIcon
+      }
+    }
+  }
+});
+</script>
+
 <template>
   <section class="skills">
 
@@ -53,59 +106,6 @@
 
   </section>
 </template>
-
-<script lang="ts">
-import Button from "./components/Button.vue";
-
-import { Icon } from "@iconify/vue";
-import getIcon from "./getIcon";
-import sendIcon from "@iconify-icons/tabler/send";
-
-import { defineComponent, ref, computed } from "vue";
-
-export default defineComponent({
-  name: "Skills",
-  components: {
-    "skill-btn": Button,
-    Icon
-  },
-  setup() {
-    const frontend = ref(true);
-    const backend = ref(false);
-    const ui = ref(false);
-
-    const changeSkill = (e: any) => {
-      const text = e.srcElement.innerText;
-
-      frontend.value = false;
-      backend.value = false;
-      ui.value = false;
-      
-      if (text === "Frontend") {
-        frontend.value = true;
-      } else if (text === "Backend") {
-        backend.value = true;
-      } else {
-        ui.value = true;
-      }
-    }
-
-    return {
-      frontend,
-      backend,
-      ui,
-      changeSkill,
-      icons: {
-        tl: computed(() => getIcon(frontend.value, backend.value, "tl")),
-        tr: computed(() => getIcon(frontend.value, backend.value, "tr")),
-        bl: computed(() => getIcon(frontend.value, backend.value, "bl")),
-        br: computed(() => getIcon(frontend.value, backend.value, "br")),
-        send: sendIcon
-      }
-    }
-  }
-});
-</script>
 
 <style lang="scss" scoped>
 .skills {

@@ -1,15 +1,3 @@
-<template>
-  <nav class="navbar">
-    <a href="/" class="logo">Freddie Nelson</a>
-    <button class="menu-btn" name="Open navigation menu" @click="$emit('show-menu')"><Icon :icon="menuIcon" /></button>
-    <div class="links">
-      <a href="#about" class="link">About</a>
-      <a href="#projects" class="link">Projects</a>
-      <a href="#contact" class="link">Contact</a>
-    </div>
-  </nav>
-</template>
-
 <script lang="ts">
 // Import menu icon
 import { Icon } from "@iconify/vue";
@@ -29,6 +17,18 @@ export default defineComponent({
   }
 });
 </script>
+
+<template>
+  <nav class="navbar">
+    <a href="/" class="logo">Freddie Nelson</a>
+    <button class="menu-btn" name="Open navigation menu" @click="$emit('show-menu')"><Icon :icon="menuIcon" /></button>
+    <div class="links">
+      <a href="#about" class="link">About</a>
+      <a href="#projects" class="link">Projects</a>
+      <a href="#contact" class="link">Contact</a>
+    </div>
+  </nav>
+</template>
 
 <style lang="scss" scoped>
 .navbar {

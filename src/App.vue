@@ -1,11 +1,3 @@
-<template>
-  <mobile-menu :showMenu="showMenu" @close-menu="showMenu = false" />
-  <navbar @show-menu="showMenu = true" />
-  <hero />
-  <skills />
-  <about />
-</template>
-
 <script lang="ts">
 // import sections
 import MobileMenu from "./components/MobileMenu.vue";
@@ -41,6 +33,14 @@ export default defineComponent({
   }
 });
 </script>
+
+<template>
+  <mobile-menu :showMenu="showMenu" @close-menu="showMenu = false" />
+  <navbar @show-menu="showMenu = true" />
+  <hero />
+  <skills />
+  <about />
+</template>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather:wght@300&display=swap');

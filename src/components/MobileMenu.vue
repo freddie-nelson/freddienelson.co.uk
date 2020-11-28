@@ -1,16 +1,3 @@
-<template>
-  <transition name="fade">
-    <div class="mobile-menu" v-if="showMenu">
-      <button @click="$emit('close-menu')" name="Close navigation menu" class="close"><Icon :icon="closeIcon" /></button>
-      <div class="content">
-        <a @click="$emit('close-menu')" href="#about" class="link">About</a>
-        <a @click="$emit('close-menu')" href="#projects" class="link">Projects</a>
-        <a @click="$emit('close-menu')" href="#contact" class="link">Contact</a>
-      </div>
-    </div>
-  </transition>
-</template>
-
 <script lang="ts">
 // Import close icon
 import { Icon } from "@iconify/vue";
@@ -36,6 +23,19 @@ export default defineComponent({
   }
 });
 </script>
+
+<template>
+  <transition name="fade">
+    <div class="mobile-menu" v-if="showMenu">
+      <button @click="$emit('close-menu')" name="Close navigation menu" class="close"><Icon :icon="closeIcon" /></button>
+      <div class="content">
+        <a @click="$emit('close-menu')" href="#about" class="link">About</a>
+        <a @click="$emit('close-menu')" href="#projects" class="link">Projects</a>
+        <a @click="$emit('close-menu')" href="#contact" class="link">Contact</a>
+      </div>
+    </div>
+  </transition>
+</template>
 
 <style lang="scss" scoped>
 .fade-enter-active, .fade-leave-active {
