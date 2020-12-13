@@ -5,9 +5,9 @@ import Curve from "./components/Curve.vue";
 import Card from "./components/Card.vue";
 
 // project images
-const mustapImage: string = require("@/assets/mustap.webp");
-const discordImage: string = require("@/assets/discord-clone.webp");
-const unoImage: string = require("@/assets/uno.webp");
+const mustapImage: string = require("../../assets/mustap.webp");
+const discordImage: string = require("../../assets/discord-clone.webp");
+const unoImage: string = require("../../assets/uno.webp");
 
 export default defineComponent({
   name: "Projects",
@@ -88,7 +88,7 @@ export default defineComponent({
 
   .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
     grid-gap: 2rem;
   }
 }

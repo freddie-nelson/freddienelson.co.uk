@@ -31,7 +31,8 @@ export default defineComponent({
 #about {
   width: 100%;
   background-color: var(--bg-light);
-  margin: calc(min(13rem, 30vw)) 0;
+  padding-top: calc(min(13rem, 30vw));
+  padding-bottom: calc(min(13rem, 30vw));
   --spacing: 1.5rem;
 
   h1 {
