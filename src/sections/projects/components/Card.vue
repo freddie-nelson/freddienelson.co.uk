@@ -60,7 +60,7 @@ export default defineComponent({
   }
 
   .text {
-    margin-top: 7rem;
+    margin-top: 7.2rem;
 
     h3 {
       font: var(--heading);
