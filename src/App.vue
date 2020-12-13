@@ -67,9 +67,10 @@ html {
 }
 
 :root {
-  // colors
+  /* colors start */
   --bg-dark: #0B0808;
   --bg-light: #F5F5F5;
+  --bg-lighter: #FFFFFF;
   --accent-dark: #2CB978;
   --accent-light: #83E85A;
   --heading-dark: #FFFFFF;
@@ -77,6 +78,32 @@ html {
   --para-dark: rgba(245, 245, 245, 0.65);
   --para-light: rgba(0, 0, 0, 0.8);
   --placeholder: #C4C4C4;
+
+  //  skills section
+  --skills-btn-bg: #eeeeee;
+  --skills-btn-text: #4d4d4d;
+  --skills-btn-selected-bg: #FFECF1;
+  --skills-btn-selected-text: #FF1F5A;
+  /* colors end */
+
+  /* dark colors start */
+  // --bg-dark: #000000;
+  // --bg-light: #0a0a0f;
+  // --bg-lighter: #0f0f18;
+  // --accent-dark: #b92c79;
+  // --accent-light: #d33acb;
+  // --heading-dark: #ffffffe1;
+  // --heading-light: #ffffffc7;
+  // --para-dark: rgba(245, 245, 245, 0.65);
+  // --para-light:rgba(245, 245, 245, 0.4);
+  // --placeholder: #C4C4C4;
+
+  // //  skills section
+  // --skills-btn-bg: #1d1d30;
+  // --skills-btn-text: #bbbbbb;
+  // --skills-btn-selected-bg: #331d30;
+  // --skills-btn-selected-text: #e71f55;
+  /* dark colors end */
 
   // fonts
   --sans: "Lato", "Arial", sans-serif;
@@ -91,12 +118,6 @@ html {
 
   // spacing
   --side-padding: min(12vw, 250px);
-
-  // skills section
-  --skills-btn-bg: #eeeeee;
-  --skills-btn-text: #4d4d4d;
-  --skills-btn-selected-bg: #FFECF1;
-  --skills-btn-selected-text: #FF1F5A;
 
   // responsive variables
   @media screen and (max-width: 700px) {
