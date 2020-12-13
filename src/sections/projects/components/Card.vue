@@ -65,10 +65,12 @@ export default defineComponent({
     h3 {
       font: var(--heading);
       font-size: 1.3rem;
+      color: var(--heading-light);
     }
 
     p {
       font: var(--para-sans);
+      color: var(--para-light);
       margin: .4rem 0;
     }
   }
