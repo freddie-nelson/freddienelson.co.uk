@@ -16,7 +16,7 @@ export default defineComponent({
 <template>
 <div class="card">
   <div class="image behind" :style="{ '--image': `url('${image}')` }" />
-  <div class="image" :style="{ '--image': `url('${image}')` }" />
+  <a :href="site" target="_blank" class="image" :style="{ '--image': `url('${image}')` }" />
 
   <div class="text">
     <h3>{{ name }}</h3>
