@@ -107,7 +107,7 @@ export default defineComponent({
         <p>Let’s talk about your ideas and build a solution together.</p>
         <div class="input">
           <input placeholder="Email..." label="email" type="text">
-          <button name="Fill contact form"><Icon :icon="icons.send" /></button>
+          <button aria-label="Fill contact form"><Icon :icon="icons.send" /></button>
         </div>
       </div>
     </div>

@@ -16,16 +16,16 @@ export default defineComponent({
 <template>
 <div class="card">
   <div class="image behind" :style="{ '--image': `url('${image}')` }" />
-  <a :href="site" target="_blank" class="image" :style="{ '--image': `url('${image}')` }" />
+  <a :href="site" target="_blank" rel="noopener" class="image" :style="{ '--image': `url('${image}')` }" />
 
   <div class="text">
-    <h3>{{ name }}</h3>
+    <h2>{{ name }}</h2>
     <p>{{ description }}</p>
   </div>
 
   <div class="buttons">
-    <a :href="code" target="_blank" class="secondary">View Code</a>
-    <a :href="site" target="_blank" class="primary">See More</a>
+    <a :href="code" target="_blank" rel="noopener" class="secondary">View Code</a>
+    <a :href="site" target="_blank" rel="noopener" class="primary">See More</a>
   </div>
 </div>
 </template>
@@ -62,7 +62,7 @@ export default defineComponent({
   .text {
     margin-top: 7.2rem;
 
-    h3 {
+    h2 {
       font: var(--heading);
       font-size: 1.3rem;
       color: var(--heading-light);
