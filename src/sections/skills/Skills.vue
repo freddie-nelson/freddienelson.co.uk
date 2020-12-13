@@ -94,6 +94,14 @@ export default defineComponent({
     </div>
 
     <div class="contact">
+
+      <svg class="curve desktop" viewBox="0 0 316 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path  d="M88.8575 232.536C4.89816 330.392 -4.43065 398.285 1.39986 420C82.9688 420 210.435 419.629 315.086 419.486V0.0405273L139.441 0.0810872C157.563 36.7928 172.817 134.68 88.8575 232.536Z"/>
+      </svg>
+      <svg preserveAspectRatio="xMinYMax meet" class="curve mobile" width="1420" height="231" viewBox="0 0 1420 231" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M633.867 65.1443C302.988 3.59095 73.4229 -3.24832 -6.108e-05 1.02622C-6.3694e-05 60.8271 1.25335 154.277 1.73687 231L1420 231L1419.86 102.229C1295.73 115.515 964.746 126.698 633.867 65.1443Z" fill="#2CB978"/>
+      </svg>
+
       <div class="content">
         <h2>Get in touch</h2>
         <p>Let’s talk about your ideas and build a solution together.</p>
@@ -111,7 +119,7 @@ export default defineComponent({
 .skills {
   width: calc(100% - var(--side-padding) * 2);
   height: 420px;
-  background-color: white;
+  background-color: var(--bg-lighter);
   border-radius: 20px;
   position: relative;
   padding: 19px 45px 45px 45px;
@@ -201,6 +209,7 @@ export default defineComponent({
 
     h2 {
       font: var(--heading);
+      color: var(--heading-light);
       font-size: 2.5rem;
       margin-bottom: 8px;
     }
@@ -228,6 +237,24 @@ export default defineComponent({
     flex-direction: column;
     padding-right: 45px;
 
+    .curve {
+      height: 100%;
+      left: -170px;
+      top: 0;
+      position: absolute;
+      z-index: -1;
+      display: none;
+
+      &.desktop {
+        display: block;
+      }
+
+      path {
+        fill: var(--accent-dark);
+        height: 100%;
+      }
+    }
+
     @media screen and (max-width: 1400px) {
       width: 100%;
       height: 175px;
@@ -240,15 +267,24 @@ export default defineComponent({
         margin-top: -5%;
       }
 
-      &::before {
+      .curve {
         left: -1px !important;
         width: calc(100% + 1px) !important;
         top: -150px !important;
-        background-image: url("../../assets/skills-curve-mobile.svg") !important;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: left bottom;
         margin-left: 0;
+
+        &.desktop {
+          display: none;
+        }
+
+        &.mobile {
+          display: block;
+        }
+
+        path {
+          height: unset;
+          width: 100%;
+        }
       }
     }
 
@@ -279,7 +315,7 @@ export default defineComponent({
       width: 95%;
       display: flex;
       border-radius: 6px;
-      background: var(--heading-dark);
+      background: var(--bg-lighter);
       padding: 6px 11px;
 
       input {
@@ -313,18 +349,6 @@ export default defineComponent({
           opacity: .8;
         }
       }
-    }
-
-
-    &::before {
-      content: "";
-      background-image: url("../../assets/skills-curve.svg");
-      height: 100%;
-      width: 300px;
-      left: -180px;
-      top: 0;
-      position: absolute;
-      z-index: -1;
     }
   }
 
