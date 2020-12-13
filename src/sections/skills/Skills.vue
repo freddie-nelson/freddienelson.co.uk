@@ -206,8 +206,7 @@ export default defineComponent({
     }
 
     p {
-      font: var(--para);
-      font-family: "Lato", "Arial", sans-serif;
+      font: var(--para-sans);
       color: var(--para-light);
       line-height: 1.35;
     }
@@ -270,7 +269,7 @@ export default defineComponent({
     p {
       text-align: center;
       color: var(--heading-dark);
-      font-family: "Lato", "Arial", sans-serif;
+      font-family: var(--sans);
       font-size: 1rem;
       width: 100%;
       margin-bottom: 20px;
@@ -329,7 +328,7 @@ export default defineComponent({
     }
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 800px) {
     width: 100%;
     margin-left: 0px;
     margin-right: 0px;

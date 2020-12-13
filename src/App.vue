@@ -5,17 +5,19 @@ import Navbar from "./sections/nav/Nav.vue";
 import Hero from "./sections/hero/Hero.vue";
 import Skills from "./sections/skills/Skills.vue";
 import About from "./sections/about/About.vue";
+import Projects from "./sections/projects/Projects.vue";
 
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'App',
+  name: "App",
   components: {
     MobileMenu,
     Navbar,
     Hero,
     Skills,
-    About
+    About,
+    Projects
   },
   data() {
     return {
@@ -23,7 +25,7 @@ export default defineComponent({
     }
   },
   watch: {
-    showMenu(val) {
+    showMenu(val: boolean) {
       if (val) {
         document.body.style.overflow = "hidden";
       } else {
@@ -40,10 +42,11 @@ export default defineComponent({
   <hero />
   <skills />
   <about />
+  <projects />
 </template>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather:wght@300&display=swap");
 
 // fluid font change
 html {
@@ -63,10 +66,6 @@ html {
   }
 }
 
-* {
-  font-family: "Lato", "Arial", sans-serif;
-}
-
 :root {
   // colors
   --bg-dark: #0B0808;
@@ -76,19 +75,22 @@ html {
   --heading-dark: #FFFFFF;
   --heading-light: #000000;
   --para-dark: rgba(245, 245, 245, 0.65);
-  --para-light: rgba(0, 0, 0, 0.65);
+  --para-light: rgba(0, 0, 0, 0.8);
   --placeholder: #C4C4C4;
 
   // fonts
-  --page-title: 900 max(4.2vw, 2.8rem) "Lato", "Arial", sans-serif;
-  --page-subtitle: 300 max(1.3vw, 1.2rem)/1.55 "Merriweather", serif;
-  --heading: 700 3.375rem "Lato", "Arial", sans-serif;
-  --heading-bolder: 900 3.375rem "Lato", "Arial", sans-serif;
-  --para: 300 1rem/1.55 "Merriweather", serif;
-  --para-small: 300 0.875rem/1.55 "Merriweather", serif;
+  --sans: "Lato", "Arial", sans-serif;
+  --serif: "Merriweather", serif;
+  --page-title: 900 max(4.2vw, 2.8rem) var(--sans);
+  --page-subtitle: 300 max(1.3vw, 1.2rem)/1.55 var(--serif);
+  --heading: 700 3.375rem var(--sans);
+  --heading-bolder: 900 3.375rem var(--sans);
+  --para: 300 1rem/1.55 var(--serif);
+  --para-sans: 400 1rem/1.55 var(--sans);
+  --para-small: 300 0.875rem/1.55 var(--serif);
 
   // spacing
-  --side-padding: min(11vw, 250px);
+  --side-padding: min(12vw, 250px);
 
   // skills section
   --skills-btn-bg: #eeeeee;
@@ -99,10 +101,15 @@ html {
   // responsive variables
   @media screen and (max-width: 700px) {
     --side-padding: 3vw;
-    --page-title: 900 max(4.2vw, 2.8rem)/.95 "Lato", "Arial", sans-serif;
-    --page-subtitle: 300 max(1.3vw, 1.02rem)/1.45 "Merriweather", serif;
+    --page-title: 900 max(4.2vw, 2.8rem)/.95 var(--sans);
+    --page-subtitle: 300 max(1.3vw, 1.02rem)/1.45 var(--serif);
   }
 }
+
+* {
+  font-family: var(--sans);
+}
+
 #app {
   width: 100%;
   height: 100%;
