@@ -45,7 +45,8 @@ export default defineComponent({
         bl: computed(() => getIcon(frontend.value, backend.value, "bl")),
         br: computed(() => getIcon(frontend.value, backend.value, "br")),
         send: sendIcon
-      }
+      },
+      show: true
     }
   }
 });
@@ -61,42 +62,42 @@ export default defineComponent({
     </div>
 
     <transition name="slide">
-    <div class="main" :key="icons.tl.value">
-        <div class="icons">
-          <Icon :icon="icons.tl.value" />
-          <Icon :icon="icons.tr.value" />
-          <Icon :icon="icons.bl.value" />
-          <Icon :icon="icons.br.value" />
-        </div>
+      <div class="main" :key="icons.tl.value">
+          <div class="icons">
+            <Icon :icon="icons.tl.value" />
+            <Icon :icon="icons.tr.value" />
+            <Icon :icon="icons.bl.value" />
+            <Icon :icon="icons.br.value" />
+          </div>
 
-        <div class="text" v-if="frontend">
-          <h2>Frontend</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor et sed elit sed dignissim fermentum vulputate. 
-            Pellentesque amet turpis varius habitant aliquam, pretium, sit. Sodales magna lacus quam praesent. Ipsum ac, sed tellus eu leo.
-          </p>
-        </div>
+          <div class="text" v-if="frontend">
+            <h2>Frontend</h2>
+            <p>
+              For frontend development I mainly work with web technologies, such as HTML, CSS and JS. I am also profficent in Vue which I have
+              used to build simple static sites, web apps and even an online multiplayer game as the versatility of Vue is almost unmatched.
+            </p>
+          </div>
 
-        <div class="text" v-else-if="backend">
-          <h2>Backend</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor et sed elit sed dignissim fermentum vulputate. 
-            Pellentesque amet turpis varius habitant aliquam, pretium, sit. Sodales magna lacus quam praesent. Ipsum ac, sed tellus eu leo.
-          </p>
-        </div>
+          <div class="text" v-else-if="backend">
+            <h2>Backend</h2>
+            <p>
+              Regrading backend development I have experience with using Nodejs, Express and MongoDB to create full stack applications. I have also used
+              socket.io for real time communications and to establish WebRTC connections for peer to peer services. 
+            </p>
+          </div>
 
-        <div class="text" v-else>
-          <h2>UI Design</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor et sed elit sed dignissim fermentum vulputate. 
-            Pellentesque amet turpis varius habitant aliquam, pretium, sit. Sodales magna lacus quam praesent. Ipsum ac, sed tellus eu leo.
-          </p>
-        </div>
-    </div>
+          <div class="text" v-else>
+            <h2>UI Design</h2>
+            <p>
+              I took an interest in graphics design when I was 12 which helped me learn the fundamentals of design such as typography, color theory and whitespace.
+              This has been extremely beneficial as I am now able to adopt these principles to create visually appealing UIs.
+            </p>
+          </div>
+      </div>
     </transition>
 
     <div class="contact">
-
+      
       <svg class="curve desktop" viewBox="0 0 316 420" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path  d="M88.8575 232.536C4.89816 330.392 -4.43065 398.285 1.39986 420C82.9688 420 210.435 419.629 315.086 419.486V0.0405273L139.441 0.0810872C157.563 36.7928 172.817 134.68 88.8575 232.536Z"/>
       </svg>
@@ -120,26 +121,17 @@ export default defineComponent({
 <style lang="scss" scoped>
 .slide-enter-active,
 .slide-leave-active {
-  transition: transform .4s ease, opacity .4s ease;
+  transition: transform .3s ease, opacity .25s ease;
+}
+
+.slide-enter-active {
+  transition-delay: .35s;
 }
 
 .slide-enter-from,
 .slide-leave-to {
   opacity: 0;
-  transform: translate(-2rem);
-  position: absolute;
-  top: 5.1rem;
-
-
-  // breakpoints for when buttons wrap
-  @media screen and (max-width: 525px) {
-    // top: 10.2rem;
-    top: 8.6rem;
-  }
-
-  @media screen and (max-width: 323px) {
-    top: 12rem;
-  }
+  transform: translate(-4rem);
 }
 
 .skills {
@@ -154,9 +146,8 @@ export default defineComponent({
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.04), 0px 25px 50px rgba(0, 0, 0, 0.09);
   display: flex;
   flex-direction: column;
-
+  overflow: hidden;
   
-
   @media screen and (max-width: 1400px) {
     height: 680px;
   }
