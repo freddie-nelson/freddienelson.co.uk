@@ -60,38 +60,40 @@ export default defineComponent({
       <skill-btn text="UI Design" :selected="ui" @click="changeSkill" />
     </div>
 
-    <div class="main">
-      <div class="icons">
-        <Icon :icon="icons.tl.value" />
-        <Icon :icon="icons.tr.value" />
-        <Icon :icon="icons.bl.value" />
-        <Icon :icon="icons.br.value" />
-      </div>
+    <transition name="slide">
+    <div class="main" :key="icons.tl.value">
+        <div class="icons">
+          <Icon :icon="icons.tl.value" />
+          <Icon :icon="icons.tr.value" />
+          <Icon :icon="icons.bl.value" />
+          <Icon :icon="icons.br.value" />
+        </div>
 
-      <div class="text" v-if="frontend">
-        <h2>Frontend</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor et sed elit sed dignissim fermentum vulputate. 
-          Pellentesque amet turpis varius habitant aliquam, pretium, sit. Sodales magna lacus quam praesent. Ipsum ac, sed tellus eu leo.
-        </p>
-      </div>
+        <div class="text" v-if="frontend">
+          <h2>Frontend</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor et sed elit sed dignissim fermentum vulputate. 
+            Pellentesque amet turpis varius habitant aliquam, pretium, sit. Sodales magna lacus quam praesent. Ipsum ac, sed tellus eu leo.
+          </p>
+        </div>
 
-      <div class="text" v-else-if="backend">
-        <h2>Backend</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor et sed elit sed dignissim fermentum vulputate. 
-          Pellentesque amet turpis varius habitant aliquam, pretium, sit. Sodales magna lacus quam praesent. Ipsum ac, sed tellus eu leo.
-        </p>
-      </div>
+        <div class="text" v-else-if="backend">
+          <h2>Backend</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor et sed elit sed dignissim fermentum vulputate. 
+            Pellentesque amet turpis varius habitant aliquam, pretium, sit. Sodales magna lacus quam praesent. Ipsum ac, sed tellus eu leo.
+          </p>
+        </div>
 
-      <div class="text" v-else>
-        <h2>UI Design</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor et sed elit sed dignissim fermentum vulputate. 
-          Pellentesque amet turpis varius habitant aliquam, pretium, sit. Sodales magna lacus quam praesent. Ipsum ac, sed tellus eu leo.
-        </p>
-      </div>
+        <div class="text" v-else>
+          <h2>UI Design</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor et sed elit sed dignissim fermentum vulputate. 
+            Pellentesque amet turpis varius habitant aliquam, pretium, sit. Sodales magna lacus quam praesent. Ipsum ac, sed tellus eu leo.
+          </p>
+        </div>
     </div>
+    </transition>
 
     <div class="contact">
 
@@ -116,6 +118,30 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform .4s ease, opacity .4s ease;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  opacity: 0;
+  transform: translate(-2rem);
+  position: absolute;
+  top: 5.1rem;
+
+
+  // breakpoints for when buttons wrap
+  @media screen and (max-width: 525px) {
+    // top: 10.2rem;
+    top: 8.6rem;
+  }
+
+  @media screen and (max-width: 323px) {
+    top: 12rem;
+  }
+}
+
 .skills {
   width: calc(100% - var(--side-padding) * 2);
   height: 420px;
@@ -128,6 +154,8 @@ export default defineComponent({
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.04), 0px 25px 50px rgba(0, 0, 0, 0.09);
   display: flex;
   flex-direction: column;
+
+  
 
   @media screen and (max-width: 1400px) {
     height: 680px;
