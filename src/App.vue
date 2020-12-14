@@ -87,22 +87,24 @@ html {
   /* colors end */
 
   /* dark colors start */
-  // --bg-dark: #000000;
-  // --bg-light: #0a0a0f;
-  // --bg-lighter: #0f0f18;
-  // --accent-dark: #b92c79;
-  // --accent-light: #d33acb;
-  // --heading-dark: #ffffffe1;
-  // --heading-light: #ffffffc7;
-  // --para-dark: rgba(245, 245, 245, 0.65);
-  // --para-light:rgba(245, 245, 245, 0.4);
-  // --placeholder: #C4C4C4;
+  // @media (prefers-color-scheme: dark) {
+  //   --bg-dark: #0c0c0c;
+  //   --bg-light: #121212;
+  //   --bg-lighter: #181818;
+  //   --accent-dark: #7F22FD;
+  //   --accent-light: #985EFF;
+  //   --heading-dark: #ffffffe1;
+  //   --heading-light: #ffffffc7;
+  //   --para-dark: rgba(245, 245, 245, 0.65);
+  //   --para-light:rgba(245, 245, 245, 0.4);
+  //   --placeholder: #C4C4C4;
 
-  // //  skills section
-  // --skills-btn-bg: #1d1d30;
-  // --skills-btn-text: #bbbbbb;
-  // --skills-btn-selected-bg: #331d30;
-  // --skills-btn-selected-text: #e71f55;
+  //   //  skills section
+  //   --skills-btn-bg: #252525;
+  //   --skills-btn-text: #bbbbbb;
+  //   --skills-btn-selected-bg: #005457;
+  //   --skills-btn-selected-text: #03DAC5;
+  // }
   /* dark colors end */
 
   // fonts

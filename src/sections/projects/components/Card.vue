@@ -42,14 +42,21 @@ export default defineComponent({
   position: relative;
   margin: auto;
   margin-top: 16rem;
+  transition: transform .5s ease;
+  
+  @media screen and (min-width: 1100px) {
+    &:hover {
+      transform: translateY(-1.5rem);
+    } 
+  }
 
   .image {
-    top: -8rem;
+    top: -8.6rem;
     left: 1.8rem;
     position: absolute;
     width: calc(100% - 1.8rem * 2);
     border-radius: 15px;
-    height: 16rem;
+    height: 17rem;
     background: var(--image) center;
     background-size: cover;
 
@@ -72,6 +79,7 @@ export default defineComponent({
       font: var(--para-sans);
       color: var(--para-light);
       margin: .4rem 0;
+      line-height: 1.4rem;
     }
   }
 
@@ -82,18 +90,31 @@ export default defineComponent({
 
     a {
       font: var(--heading);
-      font-size: 1rem;
+      font-size: 1.03rem;
       color: var(--accent-light);
       margin-left: 4%;
       padding: .4rem .8rem;
       border-radius: 2rem;
       outline: none;
-      line-height: unset;
+      line-height: 1.5rem;
+    }
+
+    .secondary {
+      transition: color .3s ease;
+
+      &:hover, &:focus {
+        color: var(--accent-dark);
+      }
     }
 
     .primary {
       background-color: var(--accent-light);
       color: var(--bg-light);
+      transition: background-color .3s ease;
+
+      &:hover, &:focus {
+        background-color: var(--accent-dark);
+      }
     }
   }
 }
