@@ -23,10 +23,10 @@ export default defineComponent({
 </script>
 
 <template>
-<div class="input">
+<div class="input" @click="$refs.input.focus()">
   <div class="label" :class="{ box: modelValue }">{{ label }}</div>
-  <input v-if="!textarea" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :type="type">
-  <textarea v-else :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :type="type" :name="label" cols="30" rows="10"></textarea>
+  <input ref="input" v-if="!textarea" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :type="type">
+  <textarea ref="input" v-else :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :type="type" :name="label" cols="30" rows="10"></textarea>
 </div>
 </template>
 
@@ -36,6 +36,8 @@ export default defineComponent({
   border: 2px solid var(--heading-light);
   border-radius: 5px;
   margin-top: 1.2rem;
+  color: var(--heading-light);
+  cursor: text;
 
   &:first-of-type {
     margin-top: .6rem;
@@ -48,6 +50,7 @@ export default defineComponent({
     padding: .3rem .5rem;
     opacity: .5;
     transition: font-size .2s ease, transform .2s ease;
+    user-select: none;
 
     &.box {
       transform: translate(.3rem, -1rem);

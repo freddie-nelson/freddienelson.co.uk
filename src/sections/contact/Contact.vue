@@ -45,7 +45,7 @@ export default defineComponent({
         <icon :icon="icons.twitter" />
       </a>
       <a href="mailto:freddie0208@hotmail.com">
-        <icon :icon="icons.email" />
+        <icon :icon="icons.email" class="email" />
       </a>
       <a href="https://github.com/freddie-nelson" target="_blank" rel="noopener">
         <icon :icon="icons.github" />
@@ -70,6 +70,7 @@ export default defineComponent({
   margin: calc(max(6rem, 15vh)) 0;
   display: flex;
   flex-direction: column;
+  color: var(--heading-light);
 
   .heading {
     width: 100%;
@@ -102,6 +103,10 @@ export default defineComponent({
       color: var(--heading-light);
       transition: color .2s ease;
       outline: none;
+      
+      &.email {
+        stroke: var(--heading-light);
+      }
 
       &:hover, &:focus {
         color: var(--accent-dark);
