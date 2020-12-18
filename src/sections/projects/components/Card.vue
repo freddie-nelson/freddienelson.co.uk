@@ -38,7 +38,7 @@ export default defineComponent({
   border-radius: 20px;
   padding: 1.8rem;
   width: 100%;
-  max-width: 26rem;
+  max-width: 30rem;
   position: relative;
   margin: auto;
   margin-top: 16rem;

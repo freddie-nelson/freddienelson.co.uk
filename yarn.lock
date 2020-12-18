@@ -889,6 +889,11 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
+"@iconify-icons/el@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify-icons/el/-/el-1.1.0.tgz#6e15e9b8352ce0e09339ef863eed16f85572a645"
+  integrity sha512-wh0N6rAmqzI1Jpn2zIPVvjjFPbSnMGNku+ac3FsRDPC65ZcgKwvK5Xxyjn5EFiCjrVwZD6p/g5Qy3+AZjqRCiA==
+
 "@iconify-icons/line-md@^1.1.0":
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/@iconify-icons/line-md/download/@iconify-icons/line-md-1.1.0.tgz#0a0240c56ed9fef63daed564666b7f486700b7a4"

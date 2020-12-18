@@ -12,6 +12,7 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
+    "@iconify-icons/el": "^1.1.0",
     "@iconify-icons/line-md": "^1.1.0",
     "@iconify-icons/tabler": "^1.1.1",
     "@iconify-icons/uil": "^1.1.0",

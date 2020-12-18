@@ -25,7 +25,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <transition name="fade">
+  <transition name="slide">
     <div class="mobile-menu" v-if="showMenu">
       <button @click="$emit('close-menu')" name="Close navigation menu" class="close"><Icon :icon="closeIcon" /></button>
       <div class="content">
@@ -38,23 +38,24 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.3s ease;
+.slide-enter-active, .slide-leave-active {
+  transition: opacity 0.3s ease, transform .3s ease;
+
 }
 
-.fade-enter-from, .fade-leave-to {
+.slide-enter-from, .slide-leave-to {
+  transform: translate(100vw);
   opacity: 0;
 }
 
 .mobile-menu {
-  z-index: 10;
+  z-index: 20;
   width: 100%;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
+  background-color: var(--bg-light);
   display: flex;
 
   .content {
@@ -64,7 +65,7 @@ export default defineComponent({
     text-align: center;
     justify-content: space-between;
     font: var(--heading);
-    color: var(--accent-light);
+    color: var(--heading-light);
     height: 40%;
     max-height: 330px;
   }
@@ -73,7 +74,7 @@ export default defineComponent({
     position: absolute;
     top: 15px;
     right: var(--side-padding);
-    color: var(--accent-light);
+    color: var(--heading-light);
     outline: none;
     
     svg {

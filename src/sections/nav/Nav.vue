@@ -20,7 +20,7 @@ export default defineComponent({
 
 <template>
   <nav class="navbar">
-    <a href="/" class="logo">Freddie Nelson</a>
+    <a href="/" class="logo link">Freddie Nelson</a>
     <button class="menu-btn" aria-label="Open navigation menu" @click="$emit('show-menu')"><Icon :icon="menuIcon" /></button>
     <div class="links">
       <a href="#about" class="link">About</a>

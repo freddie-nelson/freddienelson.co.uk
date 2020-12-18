@@ -6,6 +6,8 @@ import Hero from "./sections/hero/Hero.vue";
 import Skills from "./sections/skills/Skills.vue";
 import About from "./sections/about/About.vue";
 import Projects from "./sections/projects/Projects.vue";
+import Contact from "./sections/contact/Contact.vue";
+import Footer from "./sections/footer/Footer.vue";
 
 import { defineComponent } from "vue";
 
@@ -17,7 +19,9 @@ export default defineComponent({
     Hero,
     Skills,
     About,
-    Projects
+    Projects,
+    Contact,
+    "page-footer": Footer
   },
   data() {
     return {
@@ -43,6 +47,8 @@ export default defineComponent({
   <skills />
   <about />
   <projects />
+  <contact />
+  <page-footer />
 </template>
 
 <style lang="scss">
@@ -132,6 +138,10 @@ html {
 * {
   font-family: var(--sans);
 }
+
+// a:focus, button:focus {
+//   outline: 2px solid var(--accent-dark) !important;
+// }
 
 #app {
   width: 100%;
