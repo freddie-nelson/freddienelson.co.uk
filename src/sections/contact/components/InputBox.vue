@@ -25,8 +25,8 @@ export default defineComponent({
 <template>
 <div class="input" @click="$refs.input.focus()">
   <div class="label" :class="{ box: modelValue }">{{ label }}</div>
-  <input ref="input" v-if="!textarea" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :type="type">
-  <textarea ref="input" v-else :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :type="type" :name="label" cols="30" rows="10"></textarea>
+  <input ref="input" v-if="!textarea" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :type="type" required>
+  <textarea ref="input" v-else :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :type="type" :name="label" cols="30" rows="10" required></textarea>
 </div>
 </template>
 
