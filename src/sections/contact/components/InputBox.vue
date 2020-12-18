@@ -6,28 +6,46 @@ export default defineComponent({
   props: {
     label: {
       type: String,
-      default: "Label"
+      default: "Label",
     },
     type: {
       type: String,
-      default: "text"
+      default: "text",
     },
     textarea: {
       type: Boolean,
-      default: false
+      default: false,
     },
-    modelValue: String
+    modelValue: String,
   },
   emits: ["update:modelValue"],
 });
 </script>
 
 <template>
-<div class="input" @click="$refs.input.focus()">
-  <div class="label" :class="{ box: modelValue }">{{ label }}</div>
-  <input ref="input" v-if="!textarea" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :type="type" required>
-  <textarea ref="input" v-else :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :type="type" :name="label" cols="30" rows="10" required></textarea>
-</div>
+  <div class="input" @click="$refs.input.focus()">
+    <div class="label" :class="{ box: modelValue }">{{ label }}</div>
+    <input
+      ref="input"
+      :name="label"
+      v-if="!textarea"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+      :type="type"
+      required
+    />
+    <textarea
+      ref="input"
+      v-else
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+      :type="type"
+      :name="label"
+      cols="30"
+      rows="10"
+      required
+    ></textarea>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -40,35 +58,36 @@ export default defineComponent({
   cursor: text;
 
   &:first-of-type {
-    margin-top: .6rem;
+    margin-top: 0.6rem;
   }
 
   .label {
     position: absolute;
     font: var(--para-sans);
     font-size: 1.1rem;
-    padding: .3rem .5rem;
-    opacity: .5;
-    transition: font-size .2s ease, transform .2s ease;
+    padding: 0.3rem 0.5rem;
+    opacity: 0.5;
+    transition: font-size 0.2s ease, transform 0.2s ease;
     user-select: none;
 
     &.box {
-      transform: translate(.3rem, -1rem);
+      transform: translate(0.3rem, -1rem);
       background-color: var(--accent-dark);
-      font-size: .7rem;
+      font-size: 0.7rem;
       opacity: 1;
       color: var(--heading-dark);
       font-weight: bold;
       border-radius: 3px;
-      padding: .2rem .4rem;
+      padding: 0.2rem 0.4rem;
     }
   }
-  
-  input, textarea {
+
+  input,
+  textarea {
     width: 100%;
     font: var(--para-sans);
     font-size: 1.1rem;
-    padding: .3rem .5rem;
+    padding: 0.3rem 0.5rem;
     outline: none;
     background: none;
   }

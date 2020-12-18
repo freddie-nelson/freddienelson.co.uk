@@ -11,7 +11,7 @@ export default defineComponent({
   name: "Skills",
   components: {
     "skill-btn": Button,
-    Icon
+    Icon,
   },
   setup() {
     const frontend = ref(true);
@@ -24,7 +24,7 @@ export default defineComponent({
       frontend.value = false;
       backend.value = false;
       ui.value = false;
-      
+
       if (text === "Frontend") {
         frontend.value = true;
       } else if (text === "Backend") {
@@ -32,7 +32,7 @@ export default defineComponent({
       } else {
         ui.value = true;
       }
-    }
+    };
 
     return {
       frontend,
@@ -44,17 +44,16 @@ export default defineComponent({
         tr: computed(() => getIcon(frontend.value, backend.value, "tr")),
         bl: computed(() => getIcon(frontend.value, backend.value, "bl")),
         br: computed(() => getIcon(frontend.value, backend.value, "br")),
-        send: sendIcon
+        send: sendIcon,
       },
-      show: true
-    }
-  }
+      show: true,
+    };
+  },
 });
 </script>
 
 <template>
   <section class="skills">
-
     <div class="buttons">
       <skill-btn text="Frontend" :selected="frontend" @click="changeSkill" />
       <skill-btn text="Backend" :selected="backend" @click="changeSkill" />
@@ -63,69 +62,93 @@ export default defineComponent({
 
     <transition name="slide">
       <div class="main" :key="icons.tl.value">
-          <div class="icons">
-            <Icon :icon="icons.tl.value" />
-            <Icon :icon="icons.tr.value" />
-            <Icon :icon="icons.bl.value" />
-            <Icon :icon="icons.br.value" />
-          </div>
+        <div class="icons">
+          <Icon :icon="icons.tl.value" />
+          <Icon :icon="icons.tr.value" />
+          <Icon :icon="icons.bl.value" />
+          <Icon :icon="icons.br.value" />
+        </div>
 
-          <div class="text" v-if="frontend">
-            <h2>Frontend</h2>
-            <p>
-              For frontend development I mainly work with web technologies, such as HTML, CSS and JS. I am also profficent in Vue which I have
-              used to build simple static sites, web apps and even an online multiplayer game as the versatility of Vue is almost unmatched.
-            </p>
-          </div>
+        <div class="text" v-if="frontend">
+          <h2>Frontend</h2>
+          <p>
+            For frontend development I mainly work with web technologies, such
+            as HTML, CSS and JS. I am also profficent in Vue which I have used
+            to build simple static sites, web apps and even an online
+            multiplayer game as the versatility of Vue is almost unmatched.
+          </p>
+        </div>
 
-          <div class="text" v-else-if="backend">
-            <h2>Backend</h2>
-            <p>
-              Regrading backend development I have experience with using Nodejs, Express and MongoDB to create full stack applications. I have also used
-              socket.io for real time communications and to establish WebRTC connections for peer to peer services. 
-            </p>
-          </div>
+        <div class="text" v-else-if="backend">
+          <h2>Backend</h2>
+          <p>
+            Regrading backend development I have experience with using Nodejs,
+            Express and MongoDB to create full stack applications. I have also
+            used socket.io for real time communications and to establish WebRTC
+            connections for peer to peer services.
+          </p>
+        </div>
 
-          <div class="text" v-else>
-            <h2>UI Design</h2>
-            <p>
-              I took an interest in graphics design when I was 12 which helped me learn the fundamentals of design such as typography, color theory and whitespace.
-              This has been extremely beneficial as I am now able to adopt these principles to create visually appealing UIs.
-            </p>
-          </div>
+        <div class="text" v-else>
+          <h2>UI Design</h2>
+          <p>
+            I took an interest in graphics design when I was 12 which helped me
+            learn the fundamentals of design such as typography, color theory
+            and whitespace. This has been extremely beneficial as I am now able
+            to adopt these principles to create visually appealing UIs.
+          </p>
+        </div>
       </div>
     </transition>
 
     <div class="contact">
-      
-      <svg class="curve desktop" viewBox="0 0 316 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path  d="M88.8575 232.536C4.89816 330.392 -4.43065 398.285 1.39986 420C82.9688 420 210.435 419.629 315.086 419.486V0.0405273L139.441 0.0810872C157.563 36.7928 172.817 134.68 88.8575 232.536Z"/>
+      <svg
+        class="curve desktop"
+        viewBox="0 0 316 420"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M88.8575 232.536C4.89816 330.392 -4.43065 398.285 1.39986 420C82.9688 420 210.435 419.629 315.086 419.486V0.0405273L139.441 0.0810872C157.563 36.7928 172.817 134.68 88.8575 232.536Z"
+        />
       </svg>
-      <svg preserveAspectRatio="xMinYMax meet" class="curve mobile" width="1420" height="231" viewBox="0 0 1420 231" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M633.867 65.1443C302.988 3.59095 73.4229 -3.24832 -6.108e-05 1.02622C-6.3694e-05 60.8271 1.25335 154.277 1.73687 231L1420 231L1419.86 102.229C1295.73 115.515 964.746 126.698 633.867 65.1443Z" fill="#2CB978"/>
+      <svg
+        preserveAspectRatio="xMinYMax meet"
+        class="curve mobile"
+        width="1420"
+        height="231"
+        viewBox="0 0 1420 231"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M633.867 65.1443C302.988 3.59095 73.4229 -3.24832 -6.108e-05 1.02622C-6.3694e-05 60.8271 1.25335 154.277 1.73687 231L1420 231L1419.86 102.229C1295.73 115.515 964.746 126.698 633.867 65.1443Z"
+          fill="#2CB978"
+        />
       </svg>
 
       <div class="content">
         <h2>Get in touch</h2>
         <p>Let’s talk about your ideas and build a solution together.</p>
         <div class="input">
-          <input placeholder="Email..." label="email" type="text">
-          <button aria-label="Fill contact form"><Icon :icon="icons.send" /></button>
+          <input placeholder="Email..." label="email" type="text" />
+          <a href="#contact" aria-label="Fill contact form"
+            ><Icon :icon="icons.send"
+          /></a>
         </div>
       </div>
     </div>
-
   </section>
 </template>
 
 <style lang="scss" scoped>
 .slide-enter-active,
 .slide-leave-active {
-  transition: transform .3s ease, opacity .25s ease;
+  transition: transform 0.3s ease, opacity 0.25s ease;
 }
 
 .slide-enter-active {
-  transition-delay: .35s;
+  transition-delay: 0.35s;
 }
 
 .slide-enter-from,
@@ -143,11 +166,12 @@ export default defineComponent({
   padding: 19px 45px 45px 45px;
   margin: 0 var(--side-padding);
   margin-top: -210px;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.04), 0px 25px 50px rgba(0, 0, 0, 0.09);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.04),
+    0px 25px 50px rgba(0, 0, 0, 0.09);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  
+
   @media screen and (max-width: 1400px) {
     height: 680px;
   }
@@ -336,6 +360,7 @@ export default defineComponent({
       border-radius: 6px;
       background: var(--bg-lighter);
       padding: 6px 11px;
+      color: var(--heading-light);
 
       input {
         font-size: 1rem;
@@ -345,18 +370,18 @@ export default defineComponent({
 
         &::placeholder {
           color: var(--heading-light);
-          opacity: .4;
+          opacity: 0.4;
         }
       }
 
-      button {
+      a {
         color: var(--heading-light);
-        opacity: .4;
+        opacity: 0.4;
         width: 24px;
         height: 24px;
         margin: 1px -3px 0px 8px;
         outline: none;
-        transition: opacity .2s ease;
+        transition: opacity 0.2s ease;
 
         svg {
           width: 100%;
@@ -365,7 +390,7 @@ export default defineComponent({
         }
 
         &:hover {
-          opacity: .8;
+          opacity: 0.8;
         }
       }
     }

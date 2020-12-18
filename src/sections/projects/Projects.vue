@@ -13,15 +13,15 @@ export default defineComponent({
   name: "Projects",
   components: {
     Curve,
-    Card
+    Card,
   },
   data() {
     return {
       mustapImage,
       discordImage,
-      unoImage
-    }
-  }
+      unoImage,
+    };
+  },
 });
 </script>
 
@@ -34,23 +34,23 @@ export default defineComponent({
       <div class="underline" />
 
       <div class="cards">
-        <card 
+        <card
           name="Mustap"
-          description="A modern music player with many advanced features built from scratch in Vue and Typescript."   
+          description="A modern music player with many advanced features built from scratch in Vue and Typescript."
           code="https://github.com/freddie-nelson/mustap.me"
           site="https://github.com/freddie-nelson/mustap.me"
           :image="mustapImage"
         />
-        <card 
+        <card
           name="Discord Clone"
-          description="A clone of discord with all major features working. Built with Vue, Node, Express and MongoDB."   
+          description="A clone of discord with all major features working. Built with Vue, Node, Express and MongoDB."
           code="https://github.com/freddie-nelson/discord-clone"
           site="https://discord-clone-freddie.herokuapp.com/"
           :image="discordImage"
         />
-        <card 
+        <card
           name="Uno"
-          description="A web version of the classic card game uno. Supports online multiplayer with up to 4 people."   
+          description="A web version of the classic card game uno. Supports online multiplayer with up to 4 people."
           code="https://github.com/freddie-nelson/uno"
           site="https://github.com/freddie-nelson/uno"
           :image="unoImage"
@@ -79,10 +79,10 @@ export default defineComponent({
 
   .underline {
     font: var(--heading);
-    margin-top: .5ch;
+    margin-top: 0.5ch;
     width: 3.5ch;
-    height: .22ch;
-    border-radius: .11ch;
+    height: 0.22ch;
+    border-radius: 0.11ch;
     background-color: var(--accent-light);
   }
 

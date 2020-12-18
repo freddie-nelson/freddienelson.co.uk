@@ -6,13 +6,13 @@ export default defineComponent({
   props: {
     text: {
       type: String,
-      required: true
+      required: true,
     },
     selected: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 });
 </script>
 

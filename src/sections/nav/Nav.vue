@@ -8,20 +8,26 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "Navbar",
   components: {
-    Icon
+    Icon,
   },
   data() {
     return {
-      menuIcon
-    }
-  }
+      menuIcon,
+    };
+  },
 });
 </script>
 
 <template>
   <nav class="navbar">
     <a href="/" class="logo link">Freddie Nelson</a>
-    <button class="menu-btn" aria-label="Open navigation menu" @click="$emit('show-menu')"><Icon :icon="menuIcon" /></button>
+    <button
+      class="menu-btn"
+      aria-label="Open navigation menu"
+      @click="$emit('show-menu')"
+    >
+      <Icon :icon="menuIcon" />
+    </button>
     <div class="links">
       <a href="#about" class="link">About</a>
       <a href="#projects" class="link">Projects</a>
@@ -43,7 +49,8 @@ export default defineComponent({
   color: var(--heading-dark);
   font: var(--heading);
 
-  .logo, .link {
+  .logo,
+  .link {
     opacity: 1;
     font-size: 1.3rem;
   }
@@ -73,7 +80,7 @@ export default defineComponent({
       top: calc(49%);
       left: -10px;
       border-radius: 2px;
-      transition: width .2s ease;
+      transition: width 0.2s ease;
       height: 4px;
       width: 0px;
     }

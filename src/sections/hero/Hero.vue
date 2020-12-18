@@ -5,25 +5,28 @@ import chevronIcon from "@iconify-icons/line-md/chevron-small-right";
 
 // import typewriterjs
 import Typewriter from "typewriter-effect/dist/core";
-import { setupTypewriterDesktop, setupTypewriterMobile } from "./setupTypewriter";
+import {
+  setupTypewriterDesktop,
+  setupTypewriterMobile,
+} from "./setupTypewriter";
 
 import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "Hero",
   components: {
-    Icon
+    Icon,
   },
   data() {
     return {
-      chevronIcon
-    }
+      chevronIcon,
+    };
   },
   mounted() {
     // setup typewriter effect
     const tw = new Typewriter(this.$refs.role, {
       delay: 80,
-      loop: true
+      loop: true,
     });
 
     const delay = 1600;
@@ -34,7 +37,7 @@ export default defineComponent({
     } else {
       setupTypewriterDesktop(tw, delay, pause);
     }
-  }
+  },
 });
 </script>
 
@@ -42,7 +45,10 @@ export default defineComponent({
   <section id="hero">
     <div class="content">
       <h1>Your <span class="highlight" ref="role"></span>developer.</h1>
-      <p>I’m Freddie Nelson, I have 3 Years programming experience and I specialise in frontend development.</p>
+      <p>
+        I’m Freddie Nelson, I have 3 Years programming experience and I
+        specialise in frontend development.
+      </p>
       <a href="#contact">Get in touch <icon :icon="chevronIcon" /></a>
     </div>
   </section>
@@ -67,7 +73,7 @@ export default defineComponent({
 
       .highlight {
         color: var(--accent-dark);
-        margin-right: .4rem;
+        margin-right: 0.4rem;
 
         // @media screen and (max-width: 700px) {
         //   display: none;
@@ -78,7 +84,7 @@ export default defineComponent({
     p {
       font: var(--page-subtitle);
       color: var(--para-dark);
-      opacity: .75;
+      opacity: 0.75;
       width: 70%;
       min-width: 350px;
       max-width: 750px;
@@ -99,21 +105,21 @@ export default defineComponent({
       // }
 
       svg {
-        margin-bottom: -.1%;
+        margin-bottom: -0.1%;
         animation: anim 3s infinite ease;
         display: inline;
 
         @keyframes anim {
           from {
-            transform: translateX(-.3rem);
+            transform: translateX(-0.3rem);
           }
 
           50% {
-            transform: translateX(.2rem);
+            transform: translateX(0.2rem);
           }
 
           to {
-            transform: translateX(-.3rem);
+            transform: translateX(-0.3rem);
           }
         }
       }

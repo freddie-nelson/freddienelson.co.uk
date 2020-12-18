@@ -21,12 +21,12 @@ export default defineComponent({
     About,
     Projects,
     Contact,
-    "page-footer": Footer
+    "page-footer": Footer,
   },
   data() {
     return {
-      showMenu: false
-    }
+      showMenu: false,
+    };
   },
   watch: {
     showMenu(val: boolean) {
@@ -35,8 +35,8 @@ export default defineComponent({
       } else {
         document.body.style.overflow = "";
       }
-    }
-  }
+    },
+  },
 });
 </script>
 
@@ -74,22 +74,22 @@ html {
 
 :root {
   /* colors start */
-  --bg-dark: #0B0808;
-  --bg-light: #F5F5F5;
-  --bg-lighter: #FFFFFF;
-  --accent-dark: #2CB978;
-  --accent-light: #83E85A;
-  --heading-dark: #FFFFFF;
+  --bg-dark: #0b0808;
+  --bg-light: #f5f5f5;
+  --bg-lighter: #ffffff;
+  --accent-dark: #2cb978;
+  --accent-light: #83e85a;
+  --heading-dark: #ffffff;
   --heading-light: #000000;
   --para-dark: rgba(245, 245, 245, 0.65);
   --para-light: rgba(0, 0, 0, 0.8);
-  --placeholder: #C4C4C4;
+  --placeholder: #c4c4c4;
 
   //  skills section
   --skills-btn-bg: #eeeeee;
   --skills-btn-text: #4d4d4d;
-  --skills-btn-selected-bg: #FFECF1;
-  --skills-btn-selected-text: #FF1F5A;
+  --skills-btn-selected-bg: #ffecf1;
+  --skills-btn-selected-text: #ff1f5a;
   /* colors end */
 
   /* dark colors start */
@@ -97,19 +97,19 @@ html {
     --bg-dark: #0c0c0c;
     --bg-light: #121212;
     --bg-lighter: #181818;
-    --accent-dark: #7F22FD;
-    --accent-light: #985EFF;
-    --heading-dark: #E2E2E2;
-    --heading-light: #CBCBCB;
+    --accent-dark: #7f22fd;
+    --accent-light: #985eff;
+    --heading-dark: #e2e2e2;
+    --heading-light: #cbcbcb;
     --para-dark: rgba(245, 245, 245, 0.65);
-    --para-light:rgba(245, 245, 245, 0.4);
-    --placeholder: #C4C4C4;
+    --para-light: rgba(245, 245, 245, 0.4);
+    --placeholder: #c4c4c4;
 
     //  skills section
     --skills-btn-bg: #252525;
     --skills-btn-text: #bbbbbb;
     --skills-btn-selected-bg: #005457;
-    --skills-btn-selected-text: #03DAC5;
+    --skills-btn-selected-text: #03dac5;
   }
   /* dark colors end */
 
@@ -117,7 +117,7 @@ html {
   --sans: "Lato", "Arial", sans-serif;
   --serif: "Merriweather", serif;
   --page-title: 900 max(4.2vw, 2.8rem) var(--sans);
-  --page-subtitle: 300 max(1.3vw, 1.2rem)/1.55 var(--serif);
+  --page-subtitle: 300 max(1.3vw, 1.2rem) / 1.55 var(--serif);
   --heading: 700 3.375rem var(--sans);
   --heading-bolder: 900 3.375rem var(--sans);
   --para: 300 1rem/1.55 var(--serif);
@@ -130,8 +130,8 @@ html {
   // responsive variables
   @media screen and (max-width: 700px) {
     --side-padding: 3vw;
-    --page-title: 900 max(4.2vw, 2.8rem)/.95 var(--sans);
-    --page-subtitle: 300 max(1.3vw, 1.02rem)/1.45 var(--serif);
+    --page-title: 900 max(4.2vw, 2.8rem) / 0.95 var(--sans);
+    --page-subtitle: 300 max(1.3vw, 1.02rem) / 1.45 var(--serif);
   }
 }
 
@@ -150,7 +150,8 @@ html {
   background-color: var(--bg-light);
 }
 
-section, nav {
+section,
+nav {
   padding: 0 var(--side-padding);
 }
 </style>
