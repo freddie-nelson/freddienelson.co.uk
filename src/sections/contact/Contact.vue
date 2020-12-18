@@ -2,7 +2,7 @@
 import InputBox from "./components/InputBox.vue";
 import { Icon } from "@iconify/vue";
 
-// social icons 
+// social icons
 import twitter from "@iconify-icons/line-md/twitter";
 import email from "@iconify-icons/line-md/email";
 import github from "@iconify-icons/line-md/github";
@@ -14,7 +14,7 @@ export default defineComponent({
   name: "Contact",
   components: {
     InputBox,
-    Icon
+    Icon,
   },
   data() {
     return {
@@ -25,10 +25,10 @@ export default defineComponent({
         twitter,
         email,
         github,
-        linkedIn
-      }
-    }
-  }
+        linkedIn,
+      },
+    };
+  },
 });
 </script>
 
@@ -47,15 +47,29 @@ export default defineComponent({
       <a href="mailto:freddie0208@hotmail.com">
         <icon :icon="icons.email" class="email" />
       </a>
-      <a href="https://github.com/freddie-nelson" target="_blank" rel="noopener">
+      <a
+        href="https://github.com/freddie-nelson"
+        target="_blank"
+        rel="noopener"
+      >
         <icon :icon="icons.github" />
       </a>
-      <a href="https://www.linkedin.com/in/freddie-nelson-19a62515a/" target="_blank" rel="noopener">
+      <a
+        href="https://www.linkedin.com/in/freddie-nelson-19a62515a/"
+        target="_blank"
+        rel="noopener"
+      >
         <icon :icon="icons.linkedIn" />
       </a>
     </div>
-    
-    <form name="contact" method="POST" netlify>
+
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="form-name" value="contact" />
       <input-box v-model="email" label="Email" type="email" />
       <input-box v-model="subject" label="Subject" type="text" />
       <input-box v-model="message" label="Message" :textarea="true" />
@@ -101,14 +115,15 @@ export default defineComponent({
       width: 2.5rem;
       height: 2.5rem;
       color: var(--heading-light);
-      transition: color .2s ease;
+      transition: color 0.2s ease;
       outline: none;
-      
+
       &.email {
         stroke: var(--heading-light);
       }
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: var(--accent-dark);
       }
     }
@@ -116,16 +131,17 @@ export default defineComponent({
 
   .submit-btn {
     float: right;
-    padding: .5rem .9rem;
+    padding: 0.5rem 0.9rem;
     background-color: var(--accent-dark);
-    border-radius: .4rem;
+    border-radius: 0.4rem;
     color: var(--heading-dark);
     font-weight: bold;
     margin-top: 1rem;
     outline: none;
-    transition: background-color .3s ease;
+    transition: background-color 0.3s ease;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background-color: var(--accent-light);
     }
   }
