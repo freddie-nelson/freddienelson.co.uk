@@ -12,7 +12,7 @@ export default defineComponent({
 
     <p>I’m a 16 year old student from Scotland who loves a challenge. I have always had an interest in tech but once I got my first taste of programming at school I fell in love and have been hooked ever since. 
       I currently enjoy working with <span class="highlight">Vue</span> for frontend apps and <span class="highlight">Express</span> for the backend, 
-      however I am currently looking into <span class="highlight">Golang</span> as a replacement for <span class="highlight">Express</span>.
+      however I am also looking into <span class="highlight">Golang</span> as a more performant alternative to <span class="highlight">Express</span>.
     </p>
 
     <p>
