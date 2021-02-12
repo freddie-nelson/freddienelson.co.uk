@@ -52,7 +52,7 @@ export default defineComponent({
           name="Uno"
           description="A web version of the classic card game uno. Supports online multiplayer with up to 4 people."
           code="https://github.com/freddie-nelson/uno"
-          site="https://github.com/freddie-nelson/uno"
+          site="https://scuffeduno.online/"
           :image="unoImage"
         />
       </div>
