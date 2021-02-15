@@ -38,7 +38,7 @@ export default defineComponent({
           name="Mustap"
           description="A modern music player with many advanced features built from scratch in Vue and Typescript."
           code="https://github.com/freddie-nelson/mustap.me"
-          site="https://github.com/freddie-nelson/mustap.me"
+          site="https://mustap.app"
           :image="mustapImage"
         />
         <card
@@ -52,7 +52,7 @@ export default defineComponent({
           name="Uno"
           description="A web version of the classic card game uno. Supports online multiplayer with up to 4 people."
           code="https://github.com/freddie-nelson/uno"
-          site="https://github.com/freddie-nelson/uno"
+          site="https://scuffeduno.online/"
           :image="unoImage"
         />
       </div>
