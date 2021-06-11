@@ -1,24 +1,16 @@
 # freddienelson.co.uk
 
-## Project setup
-```
-yarn install
-```
+## Welcome 👋
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+My portfolio is written in:
 
-### Compiles and minifies for production
-```
-yarn build
-```
+- VueJS 3
+- Typescript
 
-### Lints and fixes files
-```
-yarn lint
-```
+## Contact
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+If you like any of my work and would like to get in touch:
+
+- [Send me an email 📧](mailto:freddie0208@hotmail.com)
+- [DM me through twitter](https://twitter.com/freddie_dev)
+- [Contact me through my website](https://freddienelson.co.uk)
