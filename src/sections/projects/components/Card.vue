@@ -30,12 +30,8 @@ export default defineComponent({
     </div>
 
     <div class="buttons">
-      <a :href="code" target="_blank" rel="noopener" class="secondary"
-        >View Code</a
-      >
-      <a :href="site" target="_blank" rel="noopener" class="primary"
-        >See More</a
-      >
+      <a :href="code" class="secondary">View Code</a>
+      <a :href="site" class="primary">See More</a>
     </div>
   </div>
 </template>
