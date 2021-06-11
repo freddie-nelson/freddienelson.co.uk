@@ -6,7 +6,7 @@ import Card from "./components/Card.vue";
 
 // project images
 const mustapImage: string = require("../../assets/mustap.webp");
-const discordImage: string = require("../../assets/discord-clone.webp");
+const caaanvasImage: string = require("../../assets/caaanvas.webp");
 const unoImage: string = require("../../assets/uno.webp");
 
 export default defineComponent({
@@ -18,7 +18,7 @@ export default defineComponent({
   data() {
     return {
       mustapImage,
-      discordImage,
+      caaanvasImage,
       unoImage,
     };
   },
@@ -42,11 +42,11 @@ export default defineComponent({
           :image="mustapImage"
         />
         <card
-          name="Discord Clone"
-          description="A clone of discord with all major features working. Built with Vue, Node, Express and MongoDB."
-          code="https://github.com/freddie-nelson/discord-clone"
-          site="https://discord-clone-freddie.herokuapp.com/"
-          :image="discordImage"
+          name="Caaanvas"
+          description="An infinite canvas to store all of your ideas and inspiration, or pretty much anything else."
+          code="https://github.com/freddie-nelson/caaanvas"
+          site="https://github.com/freddie-nelson/caaanvas"
+          :image="caaanvasImage"
         />
         <card
           name="Uno"
