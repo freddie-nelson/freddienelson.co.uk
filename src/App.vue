@@ -139,10 +139,6 @@ html {
   font-family: var(--sans);
 }
 
-// a:focus, button:focus {
-//   outline: 2px solid var(--accent-dark) !important;
-// }
-
 #app {
   width: 100%;
   height: 100%;

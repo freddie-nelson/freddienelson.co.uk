@@ -11,8 +11,8 @@ export default defineComponent({
     <h1>Hi, I'm <span class="highlight">Freddie Nelson</span></h1>
 
     <p>I’m a 16 year old student from Scotland who loves a challenge. I have always had an interest in tech but once I got my first taste of programming at school I fell in love and have been hooked ever since. 
-      I currently enjoy working with <span class="highlight">Vue</span> for frontend apps and <span class="highlight">Express</span> for the backend, 
-      however I am also looking into <span class="highlight">Golang</span> as a more performant alternative to <span class="highlight">Express</span>.
+      I currently enjoy working with <a href="https://vuejs.org" class="highlight">Vue</a> for frontend apps and <a href="https://nodejs.org" class="highlight">Nodejs</a> for the backend, 
+      however I am also looking into <a href="https://golang.org" class="highlight">Golang</a> as a more performant alternative to <a href="https://nodejs.org" class="highlight">Nodejs</a>.
     </p>
 
     <p>
@@ -64,6 +64,10 @@ export default defineComponent({
 
   .highlight {
     color: var(--accent-dark);
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 </style>
