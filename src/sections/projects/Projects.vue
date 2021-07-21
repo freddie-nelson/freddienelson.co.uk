@@ -5,7 +5,7 @@ import Curve from "./components/Curve.vue";
 import Card from "./components/Card.vue";
 
 // project images
-const mustapImage: string = require("../../assets/mustap.webp");
+const smmImage: string = require("../../assets/scoot-map-manager.webp");
 const caaanvasImage: string = require("../../assets/caaanvas.webp");
 const unoImage: string = require("../../assets/uno.webp");
 
@@ -17,7 +17,7 @@ export default defineComponent({
   },
   data() {
     return {
-      mustapImage,
+      smmImage,
       caaanvasImage,
       unoImage,
     };
@@ -35,11 +35,11 @@ export default defineComponent({
 
       <div class="cards">
         <card
-          name="Mustap"
-          description="A modern music player with many advanced features built from scratch in Vue and Typescript."
-          code="https://github.com/freddie-nelson/mustap.me"
-          site="https://mustap.app"
-          :image="mustapImage"
+          name="SCOOT Map Manager"
+          description="A tool that helps you manage your maps for the game SCOOT and lets you upload or download maps."
+          code="https://github.com/freddie-nelson/scoot-map-manager"
+          site="https://scootmaps.club"
+          :image="smmImage"
         />
         <card
           name="Caaanvas"
