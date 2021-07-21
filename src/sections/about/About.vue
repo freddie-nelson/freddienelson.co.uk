@@ -64,10 +64,10 @@ export default defineComponent({
 
   .highlight {
     color: var(--accent-dark);
+  }
 
-    &:hover {
-      text-decoration: underline;
-    }
+  a.highlight:hover {
+    text-decoration: underline;
   }
 }
 </style>
