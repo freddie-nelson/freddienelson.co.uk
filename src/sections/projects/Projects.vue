@@ -66,7 +66,7 @@ export default defineComponent({
 
         <card
           name="Particle Sim"
-          description="Simple cellular automota, material particle simulation built in Typescript on HTML5 Canvas."
+          description="Cellular automata particle simulation with material interactions built in Typescript on HTML5 Canvas."
           code="https://github.com/freddie-nelson/js-particle-sim"
           site="https://particles.freddienelson.co.uk/"
           :image="particleImage"
