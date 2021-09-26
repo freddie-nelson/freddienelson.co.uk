@@ -8,6 +8,9 @@ import Card from "./components/Card.vue";
 const smmImage: string = require("../../assets/scoot-map-manager.webp");
 const caaanvasImage: string = require("../../assets/caaanvas.webp");
 const unoImage: string = require("../../assets/uno.webp");
+const chessImage: string = require("../../assets/scuffed-chess.webp");
+const sliderImage: string = require("../../assets/vue3-slider.webp");
+const particleImage: string = require("../../assets/particle-sim.webp");
 
 export default defineComponent({
   name: "Projects",
@@ -20,6 +23,9 @@ export default defineComponent({
       smmImage,
       caaanvasImage,
       unoImage,
+      chessImage,
+      sliderImage,
+      particleImage,
     };
   },
 });
@@ -41,6 +47,15 @@ export default defineComponent({
           site="https://scootmaps.club"
           :image="smmImage"
         />
+
+        <card
+          name="Scuffed Uno"
+          description="A web game based on the card game UNO with over 100000+ plays. Built with VueJS and SocketIO."
+          code="https://github.com/freddie-nelson/uno"
+          site="https://scuffeduno.online/"
+          :image="unoImage"
+        />
+
         <card
           name="Caaanvas"
           description="An infinite canvas to store all of your ideas and inspiration, or pretty much anything else."
@@ -48,12 +63,29 @@ export default defineComponent({
           site="https://github.com/freddie-nelson/caaanvas"
           :image="caaanvasImage"
         />
+
         <card
-          name="Uno"
-          description="A web version of the classic card game uno. Supports online multiplayer with up to 4 people."
-          code="https://github.com/freddie-nelson/uno"
-          site="https://scuffeduno.online/"
-          :image="unoImage"
+          name="Particle Sim"
+          description="Simple cellular automota, material particle simulation built in Typescript on HTML5 Canvas."
+          code="https://github.com/freddie-nelson/js-particle-sim"
+          site="https://particles.freddienelson.co.uk/"
+          :image="particleImage"
+        />
+
+        <card
+          name="Vue 3 Slider"
+          description="A custom horizontal, vertical and circular slider for Vue 3 with 4500+ npm downloads."
+          code="https://github.com/freddie-nelson/vue3-slider"
+          site="https://freddie-nelson.github.io/vue3-slider/"
+          :image="sliderImage"
+        />
+
+        <card
+          name="Scuffed Chess"
+          description="The most themeable online multiplayer chess. Built with Vue 3 connected to a Golang backend."
+          code="https://github.com/freddie-nelson/scuffed-chess"
+          site="https://scuffedchess.online/"
+          :image="chessImage"
         />
       </div>
     </section>
