@@ -73,9 +73,9 @@ export default defineComponent({
           <h2>Frontend</h2>
           <p>
             For frontend development I mainly work with web technologies, such
-            as HTML, CSS and JS. I am also profficent in Vue which I have used
-            to build simple static sites, web apps and even an online
-            multiplayer game as the versatility of Vue is almost unmatched.
+            as HTML, CSS and JS. My framework of choice is Vue which I have used
+            to build static sites, web apps and even an online multiplayer game
+            as the versatility of Vue is incredible.
           </p>
         </div>
 

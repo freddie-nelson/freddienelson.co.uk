@@ -5,12 +5,12 @@ import Curve from "./components/Curve.vue";
 import Card from "./components/Card.vue";
 
 // project images
-const smmImage: string = require("../../assets/scoot-map-manager.webp");
-const caaanvasImage: string = require("../../assets/caaanvas.webp");
+const blaze2dImage: string = require("../../assets/blaze2d.webp");
 const unoImage: string = require("../../assets/uno.webp");
-const chessImage: string = require("../../assets/scuffed-chess.webp");
-const sliderImage: string = require("../../assets/vue3-slider.webp");
+const smmImage: string = require("../../assets/scoot-map-manager.webp");
 const particleImage: string = require("../../assets/particle-sim.webp");
+const sliderImage: string = require("../../assets/vue3-slider.webp");
+const chessImage: string = require("../../assets/scuffed-chess.webp");
 
 export default defineComponent({
   name: "Projects",
@@ -21,7 +21,7 @@ export default defineComponent({
   data() {
     return {
       smmImage,
-      caaanvasImage,
+      blaze2dImage,
       unoImage,
       chessImage,
       sliderImage,
@@ -41,27 +41,27 @@ export default defineComponent({
 
       <div class="cards">
         <card
-          name="SCOOT Map Manager"
-          description="A tool that helps you manage your maps for the game SCOOT and lets you upload or download maps."
-          code="https://github.com/freddie-nelson/scoot-map-manager"
-          site="https://scootmaps.club"
-          :image="smmImage"
+          name="Blaze 2D"
+          description="A fast, 2D WebGL 2 game engine written from scratch in TypeScript."
+          code="https://github.com/freddie-nelson/blaze-2d"
+          site="https://blaze2d.netlify.app"
+          :image="blaze2dImage"
         />
 
         <card
           name="Scuffed Uno"
-          description="A web game based on the card game UNO with over 100000+ plays. Built with VueJS and SocketIO."
+          description="A web game based on the card game UNO with over 500,000 plays. Built with VueJS and SocketIO."
           code="https://github.com/freddie-nelson/uno"
           site="https://scuffeduno.online/"
           :image="unoImage"
         />
 
         <card
-          name="Caaanvas"
-          description="An infinite canvas to store all of your ideas and inspiration, or pretty much anything else."
-          code="https://github.com/freddie-nelson/caaanvas"
-          site="https://github.com/freddie-nelson/caaanvas"
-          :image="caaanvasImage"
+          name="SCOOT Map Manager"
+          description="A tool that helps you manage your maps for the game SCOOT and lets you upload or download maps."
+          code="https://github.com/freddie-nelson/scoot-map-manager"
+          site="https://scootmaps.club"
+          :image="smmImage"
         />
 
         <card
@@ -74,7 +74,7 @@ export default defineComponent({
 
         <card
           name="Vue 3 Slider"
-          description="A custom horizontal, vertical and circular slider for Vue 3 with 4500+ npm downloads."
+          description="A custom horizontal, vertical and circular slider for Vue 3 with 5,000+ npm downloads."
           code="https://github.com/freddie-nelson/vue3-slider"
           site="https://freddie-nelson.github.io/vue3-slider/"
           :image="sliderImage"
