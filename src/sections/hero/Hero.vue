@@ -46,7 +46,7 @@ export default defineComponent({
     <div class="content">
       <h1>Your <span class="highlight" ref="role"></span>developer.</h1>
       <p>
-        I’m Freddie Nelson, I have 3 Years programming experience and I
+        I’m Freddie Nelson, I have 4 Years programming experience and I
         specialise in frontend development.
       </p>
       <a href="#contact">Get in touch <icon :icon="chevronIcon" /></a>
