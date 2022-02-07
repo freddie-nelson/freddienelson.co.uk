@@ -70,7 +70,7 @@ export default defineComponent({
       data-netlify-honeypot="bot-field"
     >
       <input type="hidden" name="form-name" value="contact" />
-      <input-box v-model="email" label="Email" type="email" />
+      <input-box v-model="email" id="contactEmail" label="Email" type="email" />
       <input-box v-model="subject" label="Subject" type="text" />
       <input-box v-model="message" label="Message" :textarea="true" />
 

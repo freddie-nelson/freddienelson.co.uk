@@ -34,11 +34,29 @@ export default defineComponent({
       }
     };
 
+    const email = ref("");
+    const contactClicked = () => {
+      const input: HTMLInputElement | null = document.querySelector(
+        "#contact input[type='email']"
+      );
+      if (!input) return;
+
+      input.value = email.value;
+
+      const event = new Event("input", {
+        bubbles: true,
+        cancelable: true,
+      });
+      input.dispatchEvent(event);
+    };
+
     return {
       frontend,
       backend,
       ui,
       changeSkill,
+      email,
+      contactClicked,
       icons: {
         tl: computed(() => getIcon(frontend.value, backend.value, "tl")),
         tr: computed(() => getIcon(frontend.value, backend.value, "tr")),
@@ -131,10 +149,19 @@ export default defineComponent({
         <h2>Get in touch</h2>
         <p>Let’s talk about your ideas and build a solution together.</p>
         <div class="input">
-          <input placeholder="Email..." label="email" type="text" />
-          <a href="#contact" aria-label="Fill contact form"
-            ><Icon :icon="icons.send"
-          /></a>
+          <input
+            v-model="email"
+            placeholder="Email..."
+            label="email"
+            type="text"
+          />
+          <a
+            href="#contact"
+            aria-label="Fill contact form"
+            @click="contactClicked"
+          >
+            <Icon :icon="icons.send" />
+          </a>
         </div>
       </div>
     </div>
