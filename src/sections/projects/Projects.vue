@@ -7,7 +7,7 @@ import Card from "./components/Card.vue";
 // project images
 const blaze2dImage: string = require("../../assets/blaze2d.webp");
 const unoImage: string = require("../../assets/uno.webp");
-const smmImage: string = require("../../assets/scoot-map-manager.webp");
+const haggisImage: string = require("../../assets/haggis-lang.webp");
 const particleImage: string = require("../../assets/particle-sim.webp");
 const sliderImage: string = require("../../assets/vue3-slider.webp");
 const chessImage: string = require("../../assets/scuffed-chess.webp");
@@ -20,7 +20,7 @@ export default defineComponent({
   },
   data() {
     return {
-      smmImage,
+      haggisImage,
       blaze2dImage,
       unoImage,
       chessImage,
@@ -65,11 +65,11 @@ export default defineComponent({
         />
 
         <card
-          name="Particle Sim"
-          description="Cellular automata particle simulation with material interactions built in Typescript on HTML5 Canvas."
-          code="https://github.com/freddie-nelson/js-particle-sim"
-          site="https://particles.freddienelson.co.uk/"
-          :image="particleImage"
+          name="Haggis Lang"
+          description="An interpreter for 'haggis', a reference language originally created for use in exam questions."
+          code="https://github.com/freddie-nelson/haggis-lang"
+          site="https://haggislang.org/"
+          :image="haggisImage"
         />
 
         <card
