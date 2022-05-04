@@ -8,7 +8,7 @@ import Card from "./components/Card.vue";
 const blaze2dImage: string = require("../../assets/blaze2d.webp");
 const unoImage: string = require("../../assets/uno.webp");
 const haggisImage: string = require("../../assets/haggis-lang.webp");
-const particleImage: string = require("../../assets/particle-sim.webp");
+const smmImage: string = require("../../assets/scoot-map-manager.webp");
 const sliderImage: string = require("../../assets/vue3-slider.webp");
 const chessImage: string = require("../../assets/scuffed-chess.webp");
 
@@ -25,7 +25,7 @@ export default defineComponent({
       unoImage,
       chessImage,
       sliderImage,
-      particleImage,
+      smmImage,
     };
   },
 });
@@ -50,7 +50,7 @@ export default defineComponent({
 
         <card
           name="Scuffed Uno"
-          description="A web game based on the card game UNO with over 1,000,000 plays. Built with VueJS and SocketIO."
+          description="A web game based on the card game UNO with over 2,000,000 plays. Built with VueJS and SocketIO."
           code="https://github.com/freddie-nelson/uno"
           site="https://scuffeduno.online/"
           :image="unoImage"
