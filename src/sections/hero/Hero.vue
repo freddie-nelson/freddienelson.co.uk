@@ -1,42 +1,47 @@
 <script lang="ts">
-// Import chevron icon
+import { defineComponent, onMounted, ref } from "vue";
+
 import { Icon } from "@iconify/vue";
 import chevronIcon from "@iconify-icons/line-md/chevron-small-right";
 
-// import typewriterjs
 import Typewriter from "typewriter-effect/dist/core";
 import {
   setupTypewriterDesktop,
   setupTypewriterMobile,
 } from "./setupTypewriter";
 
-import { defineComponent } from "vue";
-
 export default defineComponent({
   name: "Hero",
   components: {
     Icon,
   },
-  data() {
-    return {
-      chevronIcon,
-    };
-  },
-  mounted() {
-    // setup typewriter effect
-    const tw = new Typewriter(this.$refs.role, {
-      delay: 80,
-      loop: true,
+  setup() {
+    const role = ref<HTMLSpanElement>();
+
+    onMounted(() => {
+      // setup typewriter effect
+      const tw = new Typewriter(role.value, {
+        delay: 80,
+        loop: true,
+      });
+
+      const delay = 1600;
+      const pause = 300;
+
+      if (window.innerWidth <= 700) {
+        setupTypewriterMobile(tw, delay, pause);
+      } else {
+        setupTypewriterDesktop(tw, delay, pause);
+      }
     });
 
-    const delay = 1600;
-    const pause = 300;
+    return {
+      role,
 
-    if (window.innerWidth <= 700) {
-      setupTypewriterMobile(tw, delay, pause);
-    } else {
-      setupTypewriterDesktop(tw, delay, pause);
-    }
+      icons: {
+        chevron: chevronIcon,
+      },
+    };
   },
 });
 </script>
@@ -49,7 +54,7 @@ export default defineComponent({
         I’m Freddie Nelson, I have 4 Years programming experience and I
         specialise in frontend development.
       </p>
-      <a href="#contact">Get in touch <icon :icon="chevronIcon" /></a>
+      <a href="#contact">Get in touch <icon :icon="icons.chevron" /></a>
     </div>
   </section>
 </template>

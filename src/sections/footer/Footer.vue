@@ -1,17 +1,19 @@
 <script lang="ts">
-import { Icon } from "@iconify/vue";
-import heart from "@iconify-icons/el/heart";
-
 import { defineComponent } from "vue";
+
+import { Icon } from "@iconify/vue";
+import heartIcon from "@iconify-icons/el/heart";
 
 export default defineComponent({
   name: "Footer",
   components: {
     Icon,
   },
-  data() {
+  setup() {
     return {
-      heart,
+      icons: {
+        heart: heartIcon,
+      },
     };
   },
 });
@@ -19,7 +21,9 @@ export default defineComponent({
 
 <template>
   <footer class="footer">
-    <p>Made with <Icon :icon="heart" class="heart" /> by Freddie Nelson</p>
+    <p>
+      Made with <Icon :icon="icons.heart" class="heart" /> by Freddie Nelson
+    </p>
     <p>Copyright © 2020 - Present</p>
   </footer>
 </template>

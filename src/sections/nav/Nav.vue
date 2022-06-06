@@ -1,18 +1,19 @@
 <script lang="ts">
-// Import menu icon
+import { defineComponent } from "vue";
+
 import { Icon } from "@iconify/vue";
 import menuIcon from "@iconify-icons/line-md/menu";
-
-import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "Navbar",
   components: {
     Icon,
   },
-  data() {
+  setup() {
     return {
-      menuIcon,
+      icons: {
+        menu: menuIcon,
+      },
     };
   },
 });
@@ -26,12 +27,13 @@ export default defineComponent({
       aria-label="Open navigation menu"
       @click="$emit('show-menu')"
     >
-      <Icon :icon="menuIcon" />
+      <Icon :icon="icons.menu" />
     </button>
     <div class="links">
       <a href="#about" class="link">About</a>
       <a href="#projects" class="link">Projects</a>
       <a href="#contact" class="link">Contact</a>
+      <router-link to="/resume" class="link">Resume</router-link>
     </div>
   </nav>
 </template>

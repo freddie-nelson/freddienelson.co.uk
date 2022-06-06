@@ -18,7 +18,7 @@ export default defineComponent({
     Curve,
     Card,
   },
-  data() {
+  setup() {
     return {
       haggisImage,
       blaze2dImage,

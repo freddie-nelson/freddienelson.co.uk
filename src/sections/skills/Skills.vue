@@ -1,11 +1,11 @@
 <script lang="ts">
-import Button from "./components/Button.vue";
+import { defineComponent, ref, computed } from "vue";
 
 import { Icon } from "@iconify/vue";
 import getIcon from "./getIcon";
 import sendIcon from "@iconify-icons/tabler/send";
 
-import { defineComponent, ref, computed } from "vue";
+import Button from "./components/Button.vue";
 
 export default defineComponent({
   name: "Skills",

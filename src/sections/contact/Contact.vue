@@ -1,14 +1,13 @@
 <script lang="ts">
-import InputBox from "./components/InputBox.vue";
+import { defineComponent, ref } from "vue";
+
 import { Icon } from "@iconify/vue";
+import twitterIcon from "@iconify-icons/line-md/twitter";
+import emailIcon from "@iconify-icons/line-md/email";
+import githubIcon from "@iconify-icons/line-md/github";
+import linkedInIcon from "@iconify-icons/line-md/linkedin";
 
-// social icons
-import twitter from "@iconify-icons/line-md/twitter";
-import email from "@iconify-icons/line-md/email";
-import github from "@iconify-icons/line-md/github";
-import linkedIn from "@iconify-icons/line-md/linkedin";
-
-import { defineComponent } from "vue";
+import InputBox from "./components/InputBox.vue";
 
 export default defineComponent({
   name: "Contact",
@@ -16,16 +15,21 @@ export default defineComponent({
     InputBox,
     Icon,
   },
-  data() {
+  setup() {
+    const email = ref("");
+    const subject = ref("");
+    const message = ref("");
+
     return {
-      email: "",
-      subject: "",
-      message: "",
+      email,
+      subject,
+      message,
+
       icons: {
-        twitter,
-        email,
-        github,
-        linkedIn,
+        twitter: twitterIcon,
+        email: emailIcon,
+        github: githubIcon,
+        linkedIn: linkedInIcon,
       },
     };
   },

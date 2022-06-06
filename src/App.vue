@@ -1,54 +1,14 @@
 <script lang="ts">
-// import sections
-import MobileMenu from "./components/MobileMenu.vue";
-import Navbar from "./sections/nav/Nav.vue";
-import Hero from "./sections/hero/Hero.vue";
-import Skills from "./sections/skills/Skills.vue";
-import About from "./sections/about/About.vue";
-import Projects from "./sections/projects/Projects.vue";
-import Contact from "./sections/contact/Contact.vue";
-import Footer from "./sections/footer/Footer.vue";
-
 import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "App",
-  components: {
-    MobileMenu,
-    Navbar,
-    Hero,
-    Skills,
-    About,
-    Projects,
-    Contact,
-    "page-footer": Footer,
-  },
-  data() {
-    return {
-      showMenu: false,
-    };
-  },
-  watch: {
-    showMenu(val: boolean) {
-      if (val) {
-        document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "";
-      }
-    },
-  },
+  components: {},
 });
 </script>
 
 <template>
-  <mobile-menu :showMenu="showMenu" @close-menu="showMenu = false" />
-  <navbar @show-menu="showMenu = true" />
-  <hero />
-  <skills />
-  <about />
-  <projects />
-  <contact />
-  <page-footer />
+  <router-view />
 </template>
 
 <style lang="scss">
