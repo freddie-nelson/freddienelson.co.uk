@@ -4,6 +4,12 @@ import html2pdf from "html2pdf.js";
 
 import { Icon } from "@iconify/vue";
 import downloadIcon from "@iconify-icons/tabler/download";
+import emailIcon from "@iconify-icons/tabler/mail";
+import linkedInIcon from "@iconify-icons/tabler/brand-linkedin";
+import siteIcon from "@iconify-icons/tabler/world";
+import phoneIcon from "@iconify-icons/tabler/phone";
+import githubIcon from "@iconify-icons/tabler/brand-github";
+import twitterIcon from "@iconify-icons/tabler/brand-twitter";
 
 export default defineComponent({
   name: "Resume",
@@ -27,6 +33,7 @@ export default defineComponent({
       resume.value.style.borderRadius = "0px";
       resume.value.style.width = "210mm";
       resume.value.style.height = "297mm";
+      scaleResumeContent();
 
       await html2pdf(resume.value, {
         filename: "freddie-nelson-resume.pdf",
@@ -35,6 +42,7 @@ export default defineComponent({
       resume.value.style.borderRadius = "";
       resume.value.style.height = "";
       resume.value.style.width = "";
+      scaleResumeContent();
     };
 
     const scaleResumeContent = () => {
@@ -70,6 +78,12 @@ export default defineComponent({
 
       icons: {
         download: downloadIcon,
+        email: emailIcon,
+        linkedIn: linkedInIcon,
+        site: siteIcon,
+        phone: phoneIcon,
+        github: githubIcon,
+        twitter: twitterIcon,
       },
     };
   },
@@ -91,8 +105,102 @@ export default defineComponent({
       <div class="content">
         <header>
           <h1>Freddie Nelson</h1>
-          <h2>Fullstack Web Developer</h2>
+
+          <div class="contacts">
+            <a class="contact" href="mailto:freddie0208@hotmail.com">
+              <Icon :icon="icons.email" />
+              <p>freddie0208@hotmail.com</p>
+            </a>
+
+            <a class="contact" href="https://freddienelson.co.uk">
+              <Icon :icon="icons.site" />
+              <p>freddienelson.co.uk</p>
+            </a>
+
+            <a class="contact" href="tel:+447452989421">
+              <Icon :icon="icons.phone" />
+              <p>+44 7452 989421</p>
+            </a>
+
+            <!-- <a class="contact" href="https://twitter.com/freddie_dev">
+              <Icon :icon="icons.twitter" />
+              <p>@freddie_dev</p>
+            </a>
+
+            <a class="contact" href="https://github.com/freddie-nelson">
+              <Icon :icon="icons.github" />
+              <p>@freddie-nelson</p>
+            </a> -->
+          </div>
         </header>
+
+        <section class="skills">
+          <div class="title">
+            <h1>Skills</h1>
+          </div>
+
+          <div class="body">
+            <p>
+              <strong>Programming Languages: </strong>
+              HTML, CSS/SCSS, JavaScript/TypeScript, PHP, SQL, GoLang, C, Visual
+              Basic
+            </p>
+
+            <p>
+              <strong>Technologies: </strong> Vue.js, Node.js, Express.js,
+              Electron.js, Socket.IO, Three.js, Firebase, MongoDB, MySQL
+            </p>
+
+            <p>
+              <strong>Tools: </strong> Git, Github, Digitalocean, Docker,
+              Netlify, Heroku, Figma, Photoshop, Trello
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <div class="title">
+            <h1>Projects</h1>
+          </div>
+
+          <div class="body">
+            <h2>
+              <strong>Scuffed Uno </strong>
+              <a href="https://scuffeduno.online">(live site)</a>
+            </h2>
+            <ul>
+              <li>
+                A web game based on the card game UNO with over 50,000 monthly
+                players
+              </li>
+              <li>
+                Created custom 3D models and animations with Three.js and
+                Tween.js
+              </li>
+              <li>
+                Implemented a live chat utilizing websockets based on user
+                feedback
+              </li>
+              <li>
+                Cooperated with a game advertising agency to monetize the site
+              </li>
+            </ul>
+
+            <h2 style="margin-top: 0.5rem">
+              <strong>Haggis Lang </strong>
+              <a href="https://github.com/freddie-nelson/haggis-lang"
+                >(code)
+              </a>
+              <a href="https://haggislang.org">(live site)</a>
+            </h2>
+            <ul>
+              <li>
+                An interpreter for 'haggis', a reference language originally
+                created for use in SQA exam questions
+              </li>
+            </ul>
+          </div>
+        </section>
       </div>
     </article>
   </div>
@@ -109,6 +217,7 @@ export default defineComponent({
   align-items: center;
   flex-direction: column;
   overflow: hidden;
+  color: #000;
 
   .top-bar {
     display: flex;
@@ -165,6 +274,11 @@ export default defineComponent({
     height: 297mm;
     position: absolute;
     overflow: hidden;
+    padding: 2%;
+
+    // * {
+    //   font-family: "Times New Roman", Times, serif;
+    // }
   }
 
   header {
@@ -182,6 +296,79 @@ export default defineComponent({
     h2 {
       font-size: 1.8rem;
       opacity: 0.4;
+    }
+
+    .contacts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%;
+      gap: 1rem 0.5rem;
+      margin-top: 0.6rem;
+
+      .contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.3rem;
+        vertical-align: middle;
+        text-align: center;
+
+        svg {
+          width: 1.4rem;
+          height: 1.4rem;
+          transition: color 0.2s ease;
+        }
+
+        &:hover {
+          svg {
+            color: #7f22fd;
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    width: 100%;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    .title {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 2px;
+      background: #00000056;
+      margin-bottom: 1rem;
+
+      h1 {
+        position: absolute;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding: 0 1rem;
+        background: #fcf9f4;
+      }
+    }
+
+    .body {
+      a {
+        font-style: italic;
+        color: #7f22fd;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      ul {
+        list-style-type: disc;
+        padding-left: 2rem;
+      }
     }
   }
 }
