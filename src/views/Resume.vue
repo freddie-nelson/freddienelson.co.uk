@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, onMounted, onUnmounted, ref } from "vue";
 import html2pdf from "html2pdf.js";
 
 import { Icon } from "@iconify/vue";
@@ -16,7 +16,7 @@ export default defineComponent({
     //   if (e) console.log(e.clientWidth / e.clientHeight);
     // });
 
-    const resume = ref<HTMLDivElement>();
+    const resume = ref<HTMLElement>();
 
     const download = async () => {
       if (!resume.value) return alert("Failed to download as PDF.");
@@ -36,6 +36,33 @@ export default defineComponent({
       resume.value.style.height = "";
       resume.value.style.width = "";
     };
+
+    const scaleResumeContent = () => {
+      if (!resume.value) return;
+
+      const div = document.createElement("div");
+      div.style.position = "absolute";
+      div.style.width = "210mm";
+      div.style.pointerEvents = "none";
+      document.body.append(div);
+
+      const maxWidth = div.getBoundingClientRect().width;
+      document.body.removeChild(div);
+
+      const rect = resume.value.getBoundingClientRect();
+      const scale = rect.width / maxWidth;
+
+      const content = document.querySelector(
+        ".resume .content"
+      ) as HTMLDivElement;
+      if (content) content.style.transform = `scale(${scale})`;
+    };
+
+    onMounted(() => {
+      scaleResumeContent();
+      window.addEventListener("resize", scaleResumeContent);
+    });
+    onUnmounted(() => window.removeEventListener("resize", scaleResumeContent));
 
     return {
       resume,
@@ -60,7 +87,14 @@ export default defineComponent({
       </button>
     </div>
 
-    <div class="resume" ref="resume"></div>
+    <article class="resume" ref="resume">
+      <div class="content">
+        <header>
+          <h1>Freddie Nelson</h1>
+          <h2>Fullstack Web Developer</h2>
+        </header>
+      </div>
+    </article>
   </div>
 </template>
 
@@ -74,6 +108,7 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 
   .top-bar {
     display: flex;
@@ -119,6 +154,36 @@ export default defineComponent({
   max-height: 297mm;
   background: #fcf9f4;
   border-radius: 0.3rem;
+  padding: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .content {
+    width: 210mm;
+    height: 297mm;
+    position: absolute;
+    overflow: hidden;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    width: 100%;
+
+    h1 {
+      font-size: 2.8rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      opacity: 0.4;
+    }
+  }
 }
 
 .download-btn {
