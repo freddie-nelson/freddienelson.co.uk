@@ -1,6 +1,5 @@
 <script lang="ts">
 import { defineComponent, onMounted, onUnmounted, ref } from "vue";
-import html2pdf from "html2pdf.js";
 
 import { Icon } from "@iconify/vue";
 import downloadIcon from "@iconify-icons/tabler/download";
@@ -23,27 +22,6 @@ export default defineComponent({
     // });
 
     const resume = ref<HTMLElement>();
-
-    const download = async () => {
-      if (!resume.value) return alert("Failed to download as PDF.");
-
-      // const rect = resume.value.getBoundingClientRect();
-      // const h = Math.floor(rect.height);
-
-      resume.value.style.borderRadius = "0px";
-      resume.value.style.width = "210mm";
-      resume.value.style.height = "297mm";
-      scaleResumeContent();
-
-      await html2pdf(resume.value, {
-        filename: "freddie-nelson-resume.pdf",
-      });
-
-      resume.value.style.borderRadius = "";
-      resume.value.style.height = "";
-      resume.value.style.width = "";
-      scaleResumeContent();
-    };
 
     const scaleResumeContent = () => {
       if (!resume.value) return;
@@ -74,7 +52,6 @@ export default defineComponent({
 
     return {
       resume,
-      download,
 
       icons: {
         download: downloadIcon,
@@ -95,10 +72,10 @@ export default defineComponent({
     <div class="top-bar">
       <router-link to="/" class="link">Freddie Nelson</router-link>
 
-      <button class="download-btn" @click="download">
+      <a class="download-btn" href="/freddie-nelson-resume.pdf">
         <Icon :icon="icons.download" />
         Download as PDF
-      </button>
+      </a>
     </div>
 
     <article class="resume" ref="resume">
@@ -133,6 +110,31 @@ export default defineComponent({
             </a> -->
           </div>
         </header>
+
+        <section>
+          <div class="title">
+            <h1>Education</h1>
+          </div>
+
+          <div class="body">
+            <h2><strong>St Ninian's High School, </strong> 2016 - 2022</h2>
+            <p style="margin-left: 2rem">
+              <strong>Highers:</strong> Maths (A), English (A), Computing
+              Science (A), Physics (A), Geography (A)
+            </p>
+
+            <p style="margin-left: 2rem">
+              <strong>N5s:</strong> Maths (A), English (A), Computing Science
+              (A), Physics (A), Geography (A), Art and Design (A), Design and
+              Manufacture (A), French (B)
+            </p>
+
+            <p style="margin-left: 2rem">
+              <strong>NPAs:</strong> Cyber Security SCQF Level 6, Computer Games
+              Development SCQF Level 6
+            </p>
+          </div>
+        </section>
 
         <section class="skills">
           <div class="title">
@@ -188,15 +190,50 @@ export default defineComponent({
 
             <h2 style="margin-top: 0.5rem">
               <strong>Haggis Lang </strong>
-              <a href="https://github.com/freddie-nelson/haggis-lang"
-                >(code)
+              <a href="https://github.com/freddie-nelson/haggis-lang">
+                (code)
               </a>
-              <a href="https://haggislang.org">(live site)</a>
+              <a href="https://haggislang.org"> (live site)</a>
             </h2>
             <ul>
               <li>
                 An interpreter for 'haggis', a reference language originally
                 created for use in SQA exam questions
+              </li>
+              <li>
+                Handwritten scanner and recursive descent parser following
+                original language spec
+              </li>
+              <li>
+                Implemented type checker and semantic analysis stages to ensure
+                input code is valid
+              </li>
+              <li>
+                Built a web playground complete with syntax highlighting and
+                input/output in Vue.js
+              </li>
+            </ul>
+
+            <h2 style="margin-top: 0.5rem">
+              <strong>Blaze 2D </strong>
+              <a href="https://github.com/freddie-nelson/blaze-2d">(code) </a>
+              <a href="https://blaze2d.netlify.app">(live site)</a>
+            </h2>
+            <ul>
+              <li>
+                A 2D WebGL 2 game engine written from scratch in TypeScript
+              </li>
+              <li>
+                Custom physics engine for dynamics, collisions and constraints
+                simulation
+              </li>
+              <li>
+                Implemented SPH and metaball rendering for fast 2D fluid
+                simulation
+              </li>
+              <li>
+                Developed a batch renderer with automatic texture swapping and
+                atlas building
               </li>
             </ul>
           </div>

@@ -33,7 +33,7 @@ export default defineComponent({
       <a href="#about" class="link">About</a>
       <a href="#projects" class="link">Projects</a>
       <a href="#contact" class="link">Contact</a>
-      <router-link to="/resume" class="link">Resume</router-link>
+      <a href="/freddie-nelson-resume.pdf" class="link">Resume</a>
     </div>
   </nav>
 </template>

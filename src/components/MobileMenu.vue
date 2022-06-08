@@ -42,9 +42,13 @@ export default defineComponent({
           Projects
         </a>
         <a @click="$emit('close-menu')" href="#contact" class="link">Contact</a>
-        <router-link @click="$emit('close-menu')" to="/resume" class="link">
+        <a
+          @click="$emit('close-menu')"
+          href="/freddie-nelson-resume.pdf"
+          class="link"
+        >
           Resume
-        </router-link>
+        </a>
       </div>
     </div>
   </transition>
