@@ -50,7 +50,7 @@ export default defineComponent({
 
         <card
           name="Scuffed Uno"
-          description="A web game based on the card game UNO with over 2,800,000 plays. Built with VueJS and SocketIO."
+          description="A web game based on the card game UNO with over 2,900,000 plays. Built with VueJS and SocketIO."
           code="https://github.com/freddie-nelson/scuffed-uno"
           site="https://scuffeduno.online/"
           :image="unoImage"
