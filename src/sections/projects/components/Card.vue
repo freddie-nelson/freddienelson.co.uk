@@ -7,6 +7,7 @@ export default defineComponent({
     name: String,
     description: String,
     code: String,
+    hideCode: Boolean,
     site: String,
     image: String,
   },
@@ -30,7 +31,9 @@ export default defineComponent({
     </div>
 
     <div class="buttons">
-      <a :href="code" class="secondary">View Code</a>
+      <a :href="code" class="secondary" :class="{ hidden: hideCode }">
+        View Code
+      </a>
       <a :href="site" class="primary">See More</a>
     </div>
   </div>
@@ -111,6 +114,10 @@ export default defineComponent({
       &:hover,
       &:focus {
         color: var(--accent-dark);
+      }
+
+      &.hidden {
+        opacity: 0;
       }
     }
 

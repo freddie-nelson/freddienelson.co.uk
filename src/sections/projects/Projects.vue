@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, onBeforeMount, ref } from "vue";
 
 import Curve from "./components/Curve.vue";
 import Card from "./components/Card.vue";
@@ -10,7 +10,7 @@ const unoImage: string = require("../../assets/uno.webp");
 const haggisImage: string = require("../../assets/haggis-lang.webp");
 const smmImage: string = require("../../assets/scoot-map-manager.webp");
 const sliderImage: string = require("../../assets/vue3-slider.webp");
-const chessImage: string = require("../../assets/scuffed-chess.webp");
+const shortyImage: string = require("../../assets/shorty.lol.webp");
 
 export default defineComponent({
   name: "Projects",
@@ -19,11 +19,23 @@ export default defineComponent({
     Card,
   },
   setup() {
+    const scuffedUnoPlays = ref(2800000);
+    const fetchScuffedUnoPlays = async () => {
+      scuffedUnoPlays.value = await fetch(
+        "https://gist.githubusercontent.com/freddie-nelson/3fbffb9c94575acd9aac4d1c58b8b8d0/raw/scuffed-uno-stats.json"
+      )
+        .then(async (res) => (await res.json()).totalVisits)
+        .catch((err) => (console.log(err), {}));
+    };
+    onBeforeMount(fetchScuffedUnoPlays);
+
     return {
+      scuffedUnoPlays,
+
       haggisImage,
       blaze2dImage,
       unoImage,
-      chessImage,
+      shortyImage,
       sliderImage,
       smmImage,
     };
@@ -50,10 +62,24 @@ export default defineComponent({
 
         <card
           name="Scuffed Uno"
-          description="A web game based on the card game UNO with over 2,900,000 plays. Built with VueJS and SocketIO."
+          :description="`A web game based on the card game UNO with ${scuffedUnoPlays
+            .toString()
+            .replace(
+              /\B(?=(\d{3})+(?!\d))/g,
+              ','
+            )} plays. Built with VueJS and SocketIO.`"
           code="https://github.com/freddie-nelson/scuffed-uno"
+          hideCode
           site="https://scuffeduno.online/"
           :image="unoImage"
+        />
+
+        <card
+          name="Shorty"
+          description="A simple URL shortener and tracker with accounts. Built with React, Express and MySQL."
+          code="https://github.com/freddie-nelson/shorty.lol"
+          site="https://shorty.lol/"
+          :image="shortyImage"
         />
 
         <card
@@ -78,14 +104,6 @@ export default defineComponent({
           code="https://github.com/freddie-nelson/vue3-slider"
           site="https://freddie-nelson.github.io/vue3-slider/"
           :image="sliderImage"
-        />
-
-        <card
-          name="Scuffed Chess"
-          description="The most themeable online multiplayer chess. Built with Vue 3 connected to a Golang backend."
-          code="https://github.com/freddie-nelson/scuffed-chess"
-          site="https://scuffedchess.online/"
-          :image="chessImage"
         />
       </div>
     </section>
