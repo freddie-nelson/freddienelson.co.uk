@@ -1,115 +1,38 @@
 const desktop = [
+  "HTML",
+  "CSS/SCSS",
   "JavaScript",
   "Typescript",
-  "Golang",
-  "VueJS",
-  "Electron",
-  "Express",
-  "SEO",
+  "Vue",
+  "React",
   "NodeJS",
+  "ExpressJS",
+  "Electron",
+  "WebGL",
+  "ThreeJS",
+  "SQL",
+  "MySQL",
   "MongoDB",
-  "Mobile",
-  "Capacitor",
-  "Ionic",
-  "Web",
-  "HTML",
-  "CSS",
+  "GoLang",
+  "Docker",
+  "C",
+  "Visual Basic",
 ];
 
 export function setupTypewriterDesktop(tw: any, delay: number, pause: number) {
-  tw.typeString(desktop[0])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(desktop[1])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(desktop[2])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(desktop[3])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(desktop[4])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(desktop[5])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(desktop[6])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(desktop[7])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(desktop[8])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(desktop[9])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(desktop[10])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(desktop[11])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(desktop[12])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(desktop[13])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(desktop[14])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .start();
+  for (const tech of desktop) {
+    tw = tw.typeString(tech).pauseFor(delay).deleteAll().pauseFor(pause);
+  }
+ 
+  tw.start()
 }
 
-const mobile = ["JS", "Go", "Vue", "CSS", "Web", "App", "SEO"];
+const mobile = ["HTML", "CSS", "JS", "TS", "Vue", "React", "WebGL", "Node", "SQL"];
 
 export function setupTypewriterMobile(tw: any, delay: number, pause: number) {
-  tw.typeString(mobile[0])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(mobile[1])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(mobile[2])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(mobile[3])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(mobile[4])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(mobile[5])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .typeString(mobile[6])
-    .pauseFor(delay)
-    .deleteAll()
-    .pauseFor(pause)
-    .start();
+  for (const tech of mobile) {
+    tw = tw.typeString(tech).pauseFor(delay).deleteAll().pauseFor(pause);
+  }
+
+  tw.start()
 }
