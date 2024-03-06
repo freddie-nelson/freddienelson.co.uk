@@ -78,7 +78,7 @@ export default defineComponent({
           name="Shorty"
           description="A simple URL shortener and tracker with accounts. Built with React, Express and MySQL."
           code="https://github.com/freddie-nelson/shorty.lol"
-          site="https://shorty.lol/"
+          site="https://shortyranout.com/"
           :image="shortyImage"
         />
 
